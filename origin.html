@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>My Comic</title>
-<style>
-  body { margin:0; font-family: Arial, sans-serif; background:#0f0f13; color:#fff; text-align:center; }
-  header { background:#14151a; padding:10px; position:sticky; top:0; display:flex; justify-content:center; align-items:center; gap:20px; }
-  button { padding:8px 12px; cursor:pointer; border-radius:8px; border:none; background:#1a1b20; color:#fff; }
-  button:disabled { opacity:0.5; cursor:not-allowed; }
-  img { max-width:90%; margin:20px 0; border-radius:10px; }
-  input[type="number"] { width:60px; padding:5px; border-radius:6px; border:none; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Comic</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .nav {
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #444;
+      color: white;
+    }
+    button:hover {
+      background: #666;
+    }
+  </style>
 </head>
 <body>
+  <h1>My Comic</h1>
+  <div id="reader">
+    <button onclick="startComic()">Book 1</button>
+  </div>
 
-<header>
-  <button id="prevBtn">◀ Prev</button>
-  <span id="status">Page 1 / 8</span>
-  <button id="nextBtn">Next ▶</button>
-  <input id="jump" type="number" min="1" max="8" title="Jump to page" />
-</header>
-
-<img id="pageImg" src="" alt="Comic page" />
-
-<script>
-  const PAGES = [
-    "unnamed (1).jpg",
-    "unnamed (2).jpg",
-    "unnamed (3).jpg",
-    "unnamed (4).jpg",
-    "unnamed (5).jpg",
-    "unnamed (6).jpg",
-    "unnamed (7).jpg",
-    "unnamed (8).jpg"
-  ];
-
-  const img = document.getElementById("pageImg");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const status = document.getElementById("status");
-  const jump = document.getElementById("jump");
-
-  let current = 0;
-
-  function showPage() {
-    img.src = PAGES[current];
-    status.textContent = `Page ${current+1} / ${PAGES.length}`;
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === PAGES.length - 1;
-    jump.value = current + 1;
-  }
-
-  prevBtn.onclick = () => { if(current>0){ current--; showPage(); } };
-  nextBtn.onclick = () => { if(current<PAGES.length-1){ current++; showPage(); } };
-  jump.addEventListener("change", () => {
-    let n = parseInt(jump.value);
-    if(!isNaN(n) && n >= 1 && n <= PAGES.length){
-      current = n-1; showPage();
+  <script>
+    let pages = [];
+    for (let i = 1; i <= 37; i++) {
+      pages.push(`unnamed (${i}).jpg`);
     }
-  });
 
-  document.addEventListener("keydown", e => {
-    if(e.key === "ArrowLeft") prevBtn.click();
-    if(e.key === "ArrowRight") nextBtn.click();
-  });
+    let currentPage = 0;
 
-  showPage();
-</script>
+    function startComic() {
+      document.getElementById('reader').innerHTML = `
+        <div class="nav">
+          <button onclick="prevPage()">Prev</button>
+          <button onclick="nextPage()">Next</button>
+        </div>
+        <div id="comicContainer">
+          <img id="comicPage" src="${pages[0]}" alt="Comic Page">
+        </div>
+        <div class="nav">
+          <button onclick="prevPage()">Prev</button>
+          <button onclick="nextPage()">Next</button>
+        </div>
+      `;
+    }
 
+    function showPage(n) {
+      if (n >= 0 && n < pages.length) {
+        currentPage = n;
+        document.getElementById('comicPage').src = pages[n];
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        showPage(currentPage - 1);
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < pages.length - 1) {
+        showPage(currentPage + 1);
+      }
+    }
+  </script>
 </body>
 </html>
