@@ -7,38 +7,48 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ff66b2; /* Pink background */
+      background-color: #ff66b2; /* pink background */
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
 
-    /* Cloud Button */
-    .cloud-button {
-      background: white;
-      border-radius: 50%;
-      padding: 50px 100px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      font-size: 60px;
-      font-weight: bold;
-      color: #ff0066;
-      text-shadow: 2px 2px 0px black;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .title {
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 40px;
     }
 
-    .cloud-button:hover {
+    .button {
+      background-color: white;
+      color: #ff0066;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 15px 40px;
+      border: 3px solid #000;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ff0066;
+      color: white;
       transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-  <a class="cloud-button" href="https://drive.google.com/file/d/1CM3uG7Kj0xwqwFciJGvucbyrjxaLHcQc/view?usp=sharing" target="_blank">
-    Read
+  <!-- Title image -->
+  <img src="title read.png" alt="Read Title" class="title">
+
+  <!-- Button -->
+  <a href="https://drive.google.com/file/d/1CM3uG7Kj0xwqwFciJGvucbyrjxaLHcQc/view?usp=sharing" 
+     target="_blank" 
+     class="button">
+    Start Reading
   </a>
 </body>
 </html>
