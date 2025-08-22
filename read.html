@@ -7,20 +7,38 @@
   <style>
     body {
       margin: 0;
-      background-color: #ff66b2; /* pink background */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #ff66b2; /* Pink background */
+      color: #000;
+      text-align: center;
     }
 
+    /* Navigation bar */
+    nav {
+      background-color: #ffccdd;
+      padding: 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      margin: 0 20px;
+      font-size: 18px;
+    }
+    nav a:hover {
+      color: #d1006c;
+    }
+
+    /* Title image */
     .title {
-      max-width: 90%;
+      width: 90%;
+      max-width: 800px;
       height: auto;
-      margin-bottom: 40px;
+      margin: 40px auto;
+      display: block;
     }
 
+    /* Button styling */
     .button {
       background-color: white;
       color: #ff0066;
@@ -31,6 +49,8 @@
       border-radius: 30px;
       text-decoration: none;
       transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
     }
 
     .button:hover {
@@ -38,9 +58,24 @@
       color: white;
       transform: scale(1.1);
     }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #ffccdd;
+      color: #333;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Homepage</a>
+    <a href="read.html">Read</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <!-- Title image -->
   <img src="title read.png" alt="Read Title" class="title">
 
@@ -50,5 +85,9 @@
      class="button">
     Start Reading
   </a>
+
+  <footer>
+    © 2025 Penelope + Porky. All Rights Reserved.
+  </footer>
 </body>
 </html>
