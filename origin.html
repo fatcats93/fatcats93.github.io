@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Comic</title>
+<style>
+  body { margin:0; font-family: Arial, sans-serif; background:#0f0f13; color:#fff; text-align:center; }
+  header { background:#14151a; padding:10px; position:sticky; top:0; display:flex; justify-content:center; align-items:center; gap:20px; }
+  button { padding:8px 12px; cursor:pointer; border-radius:8px; border:none; background:#1a1b20; color:#fff; }
+  button:disabled { opacity:0.5; cursor:not-allowed; }
+  img { max-width:90%; margin:20px 0; border-radius:10px; }
+  input[type="number"] { width:60px; padding:5px; border-radius:6px; border:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <button id="prevBtn">◀ Prev</button>
+  <span id="status">Page 1 / 8</span>
+  <button id="nextBtn">Next ▶</button>
+  <input id="jump" type="number" min="1" max="8" title="Jump to page" />
+</header>
+
+<img id="pageImg" src="" alt="Comic page" />
+
+<script>
+  const PAGES = [
+    "unnamed (1).jpg",
+    "unnamed (2).jpg",
+    "unnamed (3).jpg",
+    "unnamed (4).jpg",
+    "unnamed (5).jpg",
+    "unnamed (6).jpg",
+    "unnamed (7).jpg",
+    "unnamed (8).jpg"
+  ];
+
+  const img = document.getElementById("pageImg");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const status = document.getElementById("status");
+  const jump = document.getElementById("jump");
+
+  let current = 0;
+
+  function showPage() {
+    img.src = PAGES[current];
+    status.textContent = `Page ${current+1} / ${PAGES.length}`;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === PAGES.length - 1;
+    jump.value = current + 1;
+  }
+
+  prevBtn.onclick = () => { if(current>0){ current--; showPage(); } };
+  nextBtn.onclick = () => { if(current<PAGES.length-1){ current++; showPage(); } };
+  jump.addEventListener("change", () => {
+    let n = parseInt(jump.value);
+    if(!isNaN(n) && n >= 1 && n <= PAGES.length){
+      current = n-1; showPage();
+    }
+  });
+
+  document.addEventListener("keydown", e => {
+    if(e.key === "ArrowLeft") prevBtn.click();
+    if(e.key === "ArrowRight") nextBtn.click();
+  });
+
+  showPage();
+</script>
+
+</body>
+</html>
