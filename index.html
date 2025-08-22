@@ -6,77 +6,73 @@
   <title>Penelope + Porky</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #ff69b4;
-      color: #ff69b4;
-    }
-    header {
-      background: #4a90e2;
-      color: pink;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #ff66b2; /* Pink background */
+      color: #000;
       text-align: center;
+    }
+
+    /* Navigation bar */
+    nav {
+      background-color: #ffccdd;
+      padding: 15px;
     }
     nav a {
-      color: pink;
-      margin: 0 15px;
       text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      margin: 0 20px;
+      font-size: 18px;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #d1006c;
     }
-    .container {
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
+
+    /* Logo section */
+    header {
+      padding: 30px 20px;
     }
-    h1 {
-      margin-bottom: 10px;
+    header img {
+      max-width: 350px;
+      height: auto;
     }
+
+    /* Welcome section */
+    .welcome {
+      background: white;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .welcome h2 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 50px;
+      margin: 10px 0;
+    }
+    .welcome p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
     footer {
-      background: #ff69b4;
-      color: pink;
-      text-align: center;
-      padding: 15px;
       margin-top: 40px;
+      padding: 20px;
+      background: #ffccdd;
+      color: #333;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Hi, I’m Veronica!</h1>
-    <p>Welcome to my homepage</p>
-    <nav>
-      <a href="#about">Homepage</a>
-      <a href="#projects">Read</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Homepage</a>
+    <a href="#read">Read</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <div class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I’m a high school student interested in film, writing, and technology. I love storytelling and plan to study at NYU Tisch.”</p>
-    </section>
-
-    <section id="projects">
-      <h2>Read</h2>
-      <ul>
-        <li>🎬 Short Film: *Title of Film*</li>
-        <li>📖 Writing Portfolio</li>
-        <li>💻 Coding Experiments</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email me at: <a href="mailto:veronicafridman63@gmail.com">veronicafridman63@gmail.com</a></p>
-    </section>
-  </div>
-
-  <footer>
-    <p>© 2025 Veronica – All Rights Reserved</p>
-  </footer>
-</body>
-</html>
+  <!-- Header / Logo -->
