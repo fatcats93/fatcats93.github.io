@@ -29,20 +29,16 @@
       color: #d1006c;
     }
 
-    /* Title image with frame */
+    /* Title image (no border now) */
     .title {
       width: 90%;
       max-width: 800px;
       height: auto;
       margin: 40px auto;
       display: block;
-      border: 6px solid #000; /* Black frame */
-      border-radius: 20px; /* Rounded edges */
-      background: white;   /* White behind image */
-      padding: 10px;       /* Space inside frame */
     }
 
-    /* Contact section */
+    /* Contact box */
     .contact-box {
       background: white;
       padding: 30px;
@@ -51,15 +47,30 @@
       max-width: 600px;
       border-radius: 20px;
       border: 3px solid #000;
-      text-align: left;
     }
     .contact-box h2 {
       text-align: center;
       color: #ff0066;
     }
-    .contact-box p {
-      font-size: 16px;
-      line-height: 1.5;
+
+    /* Email button */
+    .button {
+      background-color: white;
+      color: #ff0066;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 15px 30px;
+      border: 3px solid #000;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .button:hover {
+      background-color: #ff0066;
+      color: white;
+      transform: scale(1.1);
     }
 
     footer {
@@ -79,13 +90,13 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Title image with frame -->
+  <!-- Title image (clean, no border) -->
   <img src="contact.png" alt="Contact Title" class="title">
 
   <!-- Contact section -->
   <div class="contact-box">
     <h2>Get in Touch</h2>
-    <p><strong>Email:</strong> veronicafridman63@gmail.com</p>
+    <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
   </div>
 
   <footer>
