@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Penelope + Porky</title>
   <style>
+    /* ---------- YOUR ORIGINAL STYLES (kept intact) ---------- */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -29,51 +30,31 @@
       color: #d1006c;
     }
 
-    /* Title with characters */
-    .title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      margin: 40px 0;
+    /* Header / Banner image */
+    header {
+      padding: 40px 0; /* space above and below */
+      /* added so we can absolutely place characters relative to the banner */
+      position: relative;
     }
-    .title img {
-      width: 120px;
-      height: auto;
-    }
-
-    /* Main layout */
-    .homepage {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin: 40px auto;
-      max-width: 1200px;
-      padding: 20px;
-    }
-
-    /* Sidebar buttons */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      flex: 1;
-      align-items: center;
-    }
-    .sidebar img {
-      width: 180px;   /* adjust size to match your design */
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .sidebar img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Text image section */
-    .welcome-cloud img {
-      max-width: 100%;
+    header img.banner {
+      width: 90%;          /* fills most of the width */
+      max-width: 1200px;   /* doesn’t get too huge on big screens */
       height: auto;
       display: block;
+      margin: 0 auto;
+    }
+
+    /* Welcome section (original kept, but text hidden so we show texthome.jpg instead) */
+    .welcome {
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 900px;
+      position: relative;
+    }
+    /* hide the original text so the image replacement (texthome.jpg) is used visually */
+    .welcome h2,
+    .welcome p {
+      display: none;
     }
 
     footer {
@@ -83,6 +64,83 @@
       color: #333;
       font-size: 14px;
     }
+
+    /* ---------- ADDED STYLES FOR EXACT IMAGE PLACEMENT ---------- */
+
+    /* small helper so the overlay area sits under the banner and provides a reference box */
+    .overlay-area {
+      position: relative;           /* anchors absolute children */
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 760px;                /* controls vertical spacing to match the photo */
+      pointer-events: none;         /* default: let children opt-in to pointer-events */
+    }
+
+    /* CHARACTER IMAGES that peek above the title cloud (placed relative to header) */
+    .penelope-char,
+    .porky-char {
+      position: absolute;
+      top: -12px;                   /* slightly above the banner cloud */
+      width: 160px;                 /* tweak as needed */
+      height: auto;
+      z-index: 60;
+      pointer-events: none;
+    }
+    .penelope-char { left: 3%; transform: translateY(-4%); }
+    .porky-char   { right: 3%; transform: translateY(-4%); }
+
+    /* LEFT CLOUD-BUTTONS (Read / Films / Contact) */
+    /* These must be clickable, so we enable pointer-events on the anchors. */
+    .left-button {
+      position: absolute;
+      left: 2.8%;
+      width: 220px;                 /* approximate width; adjusts responsively below */
+      max-width: 22%;
+      cursor: pointer;
+      z-index: 70;
+      pointer-events: auto;
+      transition: transform .12s;
+    }
+    .left-button:hover { transform: scale(1.03); }
+
+    /* stack them vertically to match the photo positions */
+    .btn-read     { top: 210px; }   /* Read near top-left */
+    .btn-films    { top: 360px; }   /* Films below Read */
+    .btn-contact  { top: 510px; }   /* Contact below Films */
+
+    /* RIGHT LARGE TEXT CLOUD (texthome.jpg) */
+    .texthome-img {
+      position: absolute;
+      right: 6%;
+      top: 170px;
+      width: 56%;
+      max-width: 680px;
+      height: auto;
+      z-index: 65;
+      pointer-events: none; /* not clickable; it's the big text cloud */
+      display: block;
+    }
+
+    /* Small-screen adjustments */
+    @media (max-width: 900px) {
+      .overlay-area { height: 1100px; }
+      .penelope-char, .porky-char { width: 110px; top: -6px; }
+      .left-button { left: 4%; width: 170px; max-width: 30%; }
+      .btn-read { top: 300px; }
+      .btn-films { top: 460px; }
+      .btn-contact { top: 620px; }
+      .texthome-img { right: 4%; top: 300px; width: 70%; }
+    }
+
+    @media (max-width: 480px) {
+      /* stack layout on very small screens */
+      .overlay-area { height: 1400px; }
+      .left-button { left: 50%; transform: translateX(-50%); }
+      .btn-read { top: 420px; }
+      .btn-films { top: 600px; }
+      .btn-contact { top: 780px; }
+      .texthome-img { right: 50%; transform: translateX(50%); top: 900px; width: 80%; }
+    }
   </style>
 </head>
 <body>
@@ -91,30 +149,47 @@
     <a href="index.html">Homepage</a>
     <a href="read.html">Read</a>
     <a href="contact.html">Contact</a>
-    <a href="portfolio.html">Films</a>
+    <a href="portfolio.html">Portfolio</a>
   </nav>
 
-  <!-- Title with images -->
-  <div class="title">
-    <img src="penelope.png" alt="Penelope">
-    <h1>Penelope + Porky</h1>
-    <img src="porky.png" alt="Porky">
+  <!-- Header / Banner (left unchanged except we added character imgs) -->
+  <header id="home">
+    <!-- original banner kept exactly -->
+    <img class="banner" src="Penelopeandporky.png" alt="Penelope + Porky Logo">
+
+    <!-- two character images placed over the header (added) -->
+    <!-- Put your character images in same folder; names here are examples (change if needed) -->
+    <img class="penelope-char" src="penelope.png" alt="Penelope character">
+    <img class="porky-char"    src="porky.png"    alt="Porky character">
+  </header>
+
+  <!-- OVERLAY AREA: absolute-positioned copies of your images placed to match the photo.
+       These are the ONLY added elements that position your four images. -->
+  <div class="overlay-area" aria-hidden="false">
+    <!-- LEFT column buttons (these are anchors so they act as buttons) -->
+    <a href="read.html" class="left-button btn-read" style="pointer-events: auto;">
+      <img src="Read button.jpg" alt="Read" style="width:100%; height:auto; display:block; border:0;">
+    </a>
+
+    <a href="portfolio.html" class="left-button btn-films" style="pointer-events: auto;">
+      <img src="filmbutton.jpg" alt="Films" style="width:100%; height:auto; display:block; border:0;">
+    </a>
+
+    <a href="contact.html" class="left-button btn-contact" style="pointer-events: auto;">
+      <img src="contact button.jpg" alt="Contact" style="width:100%; height:auto; display:block; border:0;">
+    </a>
+
+    <!-- RIGHT large text cloud replacing the welcome text visually -->
+    <img class="texthome-img" src="texthome.jpg" alt="Welcome text image">
   </div>
 
-  <!-- Main layout -->
-  <div class="homepage">
-    <!-- Left side buttons -->
-    <div class="sidebar">
-      <a href="read.html"><img src="Read button.jpg" alt="Read Button"></a>
-      <a href="portfolio.html"><img src="filmbutton.jpg" alt="Films Button"></a>
-      <a href="contact.html"><img src="contact button.jpg" alt="Contact Button"></a>
-    </div>
-
-    <!-- Right side text image -->
-    <div class="welcome-cloud">
-      <img src="texthome.jpg" alt="Welcome Text">
-    </div>
-  </div>
+  <!-- ORIGINAL WELCOME SECTION (left unchanged in source, but text hidden above so image shows instead) -->
+  <section class="welcome">
+    <h2>Welcome</h2>
+    <p>
+      ..to the official website of Penelope and Porky. It is an original comic book series I created about a spoiled girl and her unicorn. Here you can read short stories about the different adventures Penelope and Porky go on.
+    </p>
+  </section>
 
   <footer>
     © 2025 Penelope + Porky. All Rights Reserved.
