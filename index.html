@@ -40,10 +40,8 @@
       height: auto;
       display: block;
       margin: 0 auto;
-    <!-- Welcome Section --> <section class="welcome"> <h2>Welcome</h2> <p> ..to my portfolio website, in my freshman year of highschool I made a comic called "Penelope and Porky" it's about a girl and her unicorn, I created this website to share those comics.I've also been making short filmss since I was 10 and decided to showcase my films here (the ones worth showcasing) you can also contact me with feedback and questions! have fun browsing the website!. </p> </section>
+    }
 
-    )
-    
     /* Layout: buttons left, text right */
     .main-layout {
       display: flex;
@@ -52,7 +50,6 @@
       max-width: 1200px;
       margin: 40px auto;
       padding: 20px;
-    
       gap: 40px;
     }
 
@@ -72,6 +69,23 @@
     }
     .sidebar img:hover {
       transform: scale(1.05);
+    }
+
+    /* Right big text cloud */
+    .text-cloud {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .text-cloud img {
+      width: 100%;
+      max-width: 650px; /* large text cloud */
+      height: auto;
+      display: block;
+    }
+
+    /* Welcome section */ .welcome { margin: 40px auto; padding: 20px; max-width: 900px; } .welcome h2 { font-family: 'Brush Script MT', cursive; font-size: 60px; margin: 10px 0; } .welcome p { font-size: 20px; line-height: 1.6; text-align:right; }
     }
 
     footer {
@@ -117,7 +131,7 @@
 
   <!-- Layout with buttons + text cloud -->
   <div class="main-layout">
-    <!-- Left small  buttons -->
+    <!-- Left small buttons -->
     <div class="sidebar">
       <a href="read.html"><img src="Rbutton.jpg" alt="Read Button"></a>
       <a href="portfolio.html"><img src="Fbutton.jpg" alt="Films Button"></a>
@@ -125,9 +139,12 @@
     </div>
 
 
-
-  
-
+  <section class="welcome">
+    <h2>Welcome</h2>
+    <p>
+    ..to my portfolio website, in my freshman year of highschool I created a comic book series called "Penelope + Porky" it is about a girl and her unicorn. I've also been making short films for a while and I wanted to display them here (only the ones worth showing) you can also contact me with feedback and questions! have fun browsing the website!
+    </p>
+  </section>
 
   <footer>
     © 2025 Penelope + Porky. All Rights Reserved.
