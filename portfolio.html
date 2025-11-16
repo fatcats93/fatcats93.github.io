@@ -59,9 +59,10 @@
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: start;
-      margin-top: -120px; /* raises posters upward to overlap the title */
+      margin-top: -200px; /* move posters higher */
       position: relative;
       z-index: 5;
+      column-gap: 80px; /* space between posters so they do NOT overlap */
     }
 
     .poster-row a { display: block; }
