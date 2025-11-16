@@ -57,9 +57,11 @@
     /* Grid row so SIX is exactly centered and Superzeros sits to the left */
     .poster-row {
       display: grid;
-      grid-template-columns: 1fr auto 1fr; /* left, center, right (right empty) */
+      grid-template-columns: 1fr auto 1fr;
       align-items: start;
-      margin-top: 30px; /* puts posters below the title */
+      margin-top: -120px; /* raises posters upward to overlap the title */
+      position: relative;
+      z-index: 5;
     }
 
     .poster-row a { display: block; }
