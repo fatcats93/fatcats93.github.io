@@ -39,14 +39,17 @@
 </head>
 <body>
   <h1>Penelope + Porky</h1>
+
   <div id="reader">
     <div class="nav">
       <button onclick="prevPage()">Prev</button>
       <button onclick="nextPage()">Next</button>
     </div>
+
     <div id="comicContainer">
       <img id="comicPage" src="" alt="Comic Page">
     </div>
+
     <div class="nav">
       <button onclick="prevPage()">Prev</button>
       <button onclick="nextPage()">Next</button>
@@ -54,9 +57,10 @@
   </div>
 
   <script>
+    // Build page list safely for GitHub Pages
     let pages = [];
     for (let i = 1; i <= 33; i++) {
-      pages.push(`pp (${i}).jpg`);
+      pages.push(`pp-${i}.jpg`);
     }
 
     let currentPage = 0;
@@ -64,7 +68,7 @@
     function showPage(n) {
       if (n >= 0 && n < pages.length) {
         currentPage = n;
-        document.getElementById('comicPage').src = pages[n];
+        document.getElementById("comicPage").src = pages[n];
       }
     }
 
@@ -80,7 +84,7 @@
       }
     }
 
-    // Start at page 1
+    // Load first page immediately
     showPage(0);
   </script>
 </body>
