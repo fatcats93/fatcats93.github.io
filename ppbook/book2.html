@@ -57,10 +57,10 @@
   </div>
 
   <script>
-    // Build page list safely for GitHub Pages
+    // Build page list using your folder + filenames
     let pages = [];
-    for (let i = 1; i <= 33; i++) {
-      pages.push(`pp-${i}.jpg`);
+    for (let i = 1; i <= 32; i++) {
+      pages.push(`ppbook/pp${i}.jpg`);
     }
 
     let currentPage = 0;
@@ -84,7 +84,7 @@
       }
     }
 
-    // Load first page immediately
+    // Load first page
     showPage(0);
   </script>
 </body>
