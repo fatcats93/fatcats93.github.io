@@ -35,6 +35,10 @@
     button:hover {
       background: #666;
     }
+    #pageNumber {
+      margin-top: 10px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -48,6 +52,7 @@
 
     <div id="comicContainer">
       <img id="comicPage" src="" alt="Comic Page">
+      <div id="pageNumber"></div>
     </div>
 
     <div class="nav">
@@ -57,7 +62,7 @@
   </div>
 
   <script>
-    // Build page list using your folder + filenames
+    // GitHub Pages-ready page list
     let pages = [];
     for (let i = 1; i <= 32; i++) {
       pages.push(`ppbook/pp${i}.jpg`);
@@ -69,6 +74,7 @@
       if (n >= 0 && n < pages.length) {
         currentPage = n;
         document.getElementById("comicPage").src = pages[n];
+        document.getElementById("pageNumber").innerText = `Page ${n + 1} / ${pages.length}`;
       }
     }
 
