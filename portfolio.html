@@ -8,12 +8,11 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #ff66b2; /* pink background */
+      background-color: #ff66b2;
       color: #000;
       font-family: Arial, sans-serif;
     }
 
-    /* Navigation */
     nav {
       width: 100%;
       background: #ffccdd; 
@@ -54,23 +53,18 @@
       margin: 0 auto;
     }
 
-    /* Poster row pushed WAY higher */
     .poster-row {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: auto auto auto;
       align-items: start;
-      margin-top: -1500px; /* moved higher */
+      margin-top: -1500px;
       position: relative;
       z-index: 5;
       column-gap: 80px;
+      justify-content: center;
     }
 
-    .poster-row a {
-      display: block;
-    }
-
-    .super {
-      justify-self: end;
+    .poster {
       max-width: 420px;
       width: 100%;
       height: auto;
@@ -79,28 +73,16 @@
       cursor: pointer;
     }
 
-    .six {
-      justify-self: center;
-      max-width: 420px;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0px 6px 25px rgba(0,0,0,0.4);
-      cursor: pointer;
-    }
-
-    /* Mobile layout */
     @media (max-width: 700px) {
       .poster-row {
         display: flex;
         flex-direction: column;
         gap: 20px;
         align-items: center;
-        margin-top: -400px; /* safer on small screens */
+        margin-top: -400px;
       }
 
-      .super,
-      .six {
+      .poster {
         max-width: 85%;
       }
     }
@@ -109,27 +91,22 @@
 <body>
 
   <div class="container">
-    <!-- Title Image -->
     <img src="filmtitle.jpg" alt="Film Title" class="title-image">
 
-    <!-- Poster row -->
     <div class="poster-row">
-      <!-- Superzeros -->
-      <div style="grid-column: 1 / 2; display:flex; justify-content:flex-end; align-items:flex-start;">
-        <a href="https://www.youtube.com/watch?v=mg8MOKGUxH4" target="_blank">
-          <img src="superzeros.jpg" alt="Superzeros" class="super">
-        </a>
-      </div>
 
-      <!-- SIX -->
-      <div style="grid-column: 2 / 3; display:flex; justify-content:center; align-items:flex-start;">
-        <a href="https://youtu.be/w7c8KUtqwJg" target="_blank">
-          <img src="sixposter.jpg" alt="Six Poster" class="six">
-        </a>
-      </div>
+      <a href="https://www.youtube.com/watch?v=mg8MOKGUxH4" target="_blank">
+        <img src="superzeros.jpg" alt="Superzeros" class="poster">
+      </a>
 
-      <!-- Empty column for centering -->
-      <div style="grid-column: 3 / 4;"></div>
+      <a href="https://youtu.be/w7c8KUtqwJg" target="_blank">
+        <img src="sixposter.jpg" alt="Six Poster" class="poster">
+      </a>
+
+      <a href="https://youtu.be/TuGxdEprqZ8" target="_blank">
+        <img src="pharmaka.jpg" alt="Pharmaka Poster" class="poster">
+      </a>
+
     </div>
   </div>
 
