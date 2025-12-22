@@ -55,8 +55,9 @@
 
   <script>
     let pages = [];
-    for (let i = 1; i <= 32; i++) {
-pages.push(`ppbook/pp${i}.jpg`); // folder + file name
+    for (let i = 1; i <= 37; i++) {
+      if (![6,16,17,18,19].includes(i)) {  // skip these pages
+        pages.push(`unnamed (${i}).jpg`);
       }
     }
 
