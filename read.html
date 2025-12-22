@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read - Penelope + Porky</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #ff66b2; /* Pink background */
+      background-color: #ff66b2;
       color: #000;
       text-align: center;
     }
@@ -18,6 +19,7 @@
       background-color: #ffccdd;
       padding: 15px;
     }
+
     nav a {
       text-decoration: none;
       color: #333;
@@ -25,6 +27,7 @@
       margin: 0 20px;
       font-size: 18px;
     }
+
     nav a:hover {
       color: #d1006c;
     }
@@ -38,25 +41,25 @@
       display: block;
     }
 
-    /* Button styling (kept in case you add text buttons later) */
-    .button {
-      background-color: white;
-      color: #ff0066;
-      font-size: 2rem;
-      font-weight: bold;
-      padding: 15px 40px;
-      border: 3px solid #000;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
+    /* Book button container */
+    .book-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1in; /* EXACT 1 inch spacing */
       margin-top: 20px;
     }
 
-    .button:hover {
-      background-color: #ff0066;
-      color: white;
-      transform: scale(1.1);
+    /* Book images */
+    .book-buttons img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .book-buttons img:hover {
+      transform: scale(1.05);
     }
 
     footer {
@@ -68,29 +71,34 @@
     }
   </style>
 </head>
+
 <body>
+
   <!-- Navigation -->
   <nav>
     <a href="index.html">Homepage</a>
     <a href="read.html">Read</a>
     <a href="contact.html">Contact</a>
-    <a href="portfolio.html">films</a>
+    <a href="portfolio.html">Films</a>
   </nav>
 
   <!-- Title image -->
   <img src="title read.png" alt="Read Title" class="title">
 
-  <!-- Image buttons -->
-  <a href="https://fatcats93.github.io/origin.html" target="_blank">
-    <img src="Book1.png" alt="Book 1" style="max-width:200px; margin-top:20px;">
-  </a>
+  <!-- Book buttons -->
+  <div class="book-buttons">
+    <a href="https://fatcats93.github.io/origin.html" target="_blank">
+      <img src="Book1.png" alt="Book 1">
+    </a>
 
-  <a href="fatcats93.github.io/book2.html" target="_blank">
-    <img src="book2.png" alt="Book 2" style="max-width:200px; margin-top:20px;">
-  </a>
+    <a href="https://fatcats93.github.io/book2.html" target="_blank">
+      <img src="book2.png" alt="Book 2">
+    </a>
+  </div>
 
   <footer>
     © 2025 Penelope + Porky. All Rights Reserved.
   </footer>
+
 </body>
 </html>
