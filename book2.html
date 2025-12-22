@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penelope + Porky</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .nav {
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #444;
+      color: white;
+    }
+    button:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Penelope + Porky</h1>
+  <div id="reader">
+    <div class="nav">
+      <button onclick="prevPage()">Prev</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+    <div id="comicContainer">
+      <img id="comicPage" src="" alt="Comic Page">
+    </div>
+    <div class="nav">
+      <button onclick="prevPage()">Prev</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    let pages = [];
+    for (let i = 1; i <= 37; i++) {
+      if (![6,16,17,18,19].includes(i)) {  // skip these pages
+        pages.push(`unnamed (${i}).jpg`);
+      }
+    }
+
+    let currentPage = 0;
+
+    function showPage(n) {
+      if (n >= 0 && n < pages.length) {
+        currentPage = n;
+        document.getElementById('comicPage').src = pages[n];
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        showPage(currentPage - 1);
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < pages.length - 1) {
+        showPage(currentPage + 1);
+      }
+    }
+
+    // Start immediately at page 1
+    showPage(0);
+  </script>
+</body>
+</html>
