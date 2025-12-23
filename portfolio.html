@@ -31,14 +31,14 @@
       z-index: 1;
     }
 
-    /* Poster row — stronger overlap */
+    /* Poster row — VERY strong overlap */
     .poster-row {
       display: grid;
       grid-template-columns: auto auto auto;
       justify-content: center;
       column-gap: 80px;
       margin-top: 60px;
-      transform: translateY(-200px); /* HIGHER overlap */
+      transform: translateY(-260px); /* EVEN HIGHER */
       position: relative;
       z-index: 5;
     }
@@ -52,14 +52,13 @@
       cursor: pointer;
     }
 
-    /* Mobile */
     @media (max-width: 700px) {
       .poster-row {
         display: flex;
         flex-direction: column;
         gap: 20px;
         margin-top: 40px;
-        transform: translateY(-120px);
+        transform: translateY(-150px);
       }
 
       .poster {
