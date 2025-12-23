@@ -31,14 +31,14 @@
       z-index: 1;
     }
 
-    /* Poster row */
+    /* Poster row — stronger overlap */
     .poster-row {
       display: grid;
       grid-template-columns: auto auto auto;
       justify-content: center;
       column-gap: 80px;
-      margin-top: 60px;              /* below title */
-      transform: translateY(-120px); /* overlap title slightly */
+      margin-top: 60px;
+      transform: translateY(-200px); /* HIGHER overlap */
       position: relative;
       z-index: 5;
     }
@@ -52,14 +52,14 @@
       cursor: pointer;
     }
 
-    /* Mobile layout */
+    /* Mobile */
     @media (max-width: 700px) {
       .poster-row {
         display: flex;
         flex-direction: column;
         gap: 20px;
         margin-top: 40px;
-        transform: translateY(-80px);
+        transform: translateY(-120px);
       }
 
       .poster {
