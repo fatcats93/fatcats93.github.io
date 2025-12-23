@@ -17,7 +17,7 @@
       margin-top: 40px;
       text-align: center;
       position: relative;
-      padding-bottom: 60px;
+      padding-bottom: 120px;
     }
 
     .title-image {
@@ -27,18 +27,20 @@
       border-radius: 12px;
       display: block;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Poster row — moved EVEN lower */
+    /* Poster row */
     .poster-row {
       display: grid;
       grid-template-columns: auto auto auto;
-      align-items: start;
-      margin-top: -1250px; /* lowered again */
+      justify-content: center;
+      column-gap: 80px;
+      margin-top: 60px;              /* below title */
+      transform: translateY(-120px); /* overlap title slightly */
       position: relative;
       z-index: 5;
-      column-gap: 80px;
-      justify-content: center;
     }
 
     .poster {
@@ -50,13 +52,14 @@
       cursor: pointer;
     }
 
+    /* Mobile layout */
     @media (max-width: 700px) {
       .poster-row {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        align-items: center;
-        margin-top: -350px;
+        margin-top: 40px;
+        transform: translateY(-80px);
       }
 
       .poster {
