@@ -31,21 +31,20 @@
       z-index: 1;
     }
 
-    /* Poster row */
+    /* Poster row — slightly higher */
     .poster-row {
       display: grid;
       grid-template-columns: auto auto auto;
       justify-content: center;
       column-gap: 80px;
       margin-top: 60px;
-      transform: translateY(-295px);
+      transform: translateY(-315px); /* lifted a bit */
       position: relative;
       z-index: 5;
     }
 
-    /* BIGGER posters */
     .poster {
-      max-width: 520px; /* increased size */
+      max-width: 520px;
       width: 100%;
       height: auto;
       border-radius: 14px;
@@ -59,7 +58,7 @@
         flex-direction: column;
         gap: 24px;
         margin-top: 40px;
-        transform: translateY(-170px);
+        transform: translateY(-185px);
       }
 
       .poster {
