@@ -31,12 +31,12 @@
       z-index: 1;
     }
 
-    /* Poster row — fixed spacing */
+    /* Top 3 posters */
     .poster-row {
       display: grid;
-      grid-template-columns: repeat(4, auto); /* 4 equal columns */
+      grid-template-columns: auto auto auto;
       justify-content: center;
-      column-gap: 60px; /* even spacing */
+      column-gap: 80px;
       margin-top: 60px;
       transform: translateY(-400px);
       position: relative;
@@ -44,7 +44,7 @@
     }
 
     .poster {
-      max-width: 400px; /* slightly smaller */
+      max-width: 470px; /* slightly smaller than 520 */
       width: 100%;
       height: auto;
       border-radius: 14px;
@@ -52,21 +52,27 @@
       cursor: pointer;
     }
 
-    @media (max-width: 900px) {
-      .poster-row {
-        grid-template-columns: repeat(2, auto);
-        row-gap: 30px;
-        transform: translateY(-250px);
-      }
+    /* Bottom Pharmaka */
+    .bottom-poster {
+      margin-top: 120px; /* extra spacing below top row */
+      transform: translateY(-400px);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .poster-row {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        transform: translateY(-250px);
       }
 
       .poster {
         max-width: 90%;
+      }
+
+      .bottom-poster {
+        margin-top: 60px;
+        transform: translateY(-250px);
       }
     }
   </style>
@@ -76,6 +82,7 @@
   <div class="container">
     <img src="filmtitle.jpg" alt="Film Title" class="title-image">
 
+    <!-- Top Row -->
     <div class="poster-row">
       <a href="https://www.youtube.com/watch?v=mg8MOKGUxH4" target="_blank">
         <img src="superzeros.jpg" alt="Superzeros" class="poster">
@@ -88,11 +95,15 @@
       <a href="https://youtu.be/w7c8KUtqwJg" target="_blank">
         <img src="sixposter.jpg" alt="Six Poster" class="poster">
       </a>
+    </div>
 
+    <!-- Bottom Centered Pharmaka -->
+    <div class="bottom-poster">
       <a href="https://youtu.be/TuGxdEprqZ8" target="_blank">
         <img src="pharmaka.jpg" alt="Pharmaka Poster" class="poster">
       </a>
     </div>
+
   </div>
 
 </body>
