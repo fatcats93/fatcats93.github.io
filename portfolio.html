@@ -31,12 +31,12 @@
       z-index: 1;
     }
 
-    /* Poster row — higher overlap */
+    /* Poster row — fixed spacing */
     .poster-row {
       display: grid;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: repeat(4, auto); /* 4 equal columns */
       justify-content: center;
-      column-gap: 80px;
+      column-gap: 60px; /* even spacing */
       margin-top: 60px;
       transform: translateY(-400px);
       position: relative;
@@ -44,7 +44,7 @@
     }
 
     .poster {
-      max-width: 520px;
+      max-width: 400px; /* slightly smaller */
       width: 100%;
       height: auto;
       border-radius: 14px;
@@ -52,13 +52,17 @@
       cursor: pointer;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .poster-row {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        margin-top: 40px;
+        grid-template-columns: repeat(2, auto);
+        row-gap: 30px;
         transform: translateY(-250px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .poster-row {
+        grid-template-columns: 1fr;
       }
 
       .poster {
@@ -77,7 +81,6 @@
         <img src="superzeros.jpg" alt="Superzeros" class="poster">
       </a>
 
-      <!-- Max Dollar (placed directly under Superzeros) -->
       <a href="https://youtu.be/9GQ9nFCIjoY" target="_blank">
         <img src="maxdollar.jpg" alt="Max Dollar Poster" class="poster">
       </a>
