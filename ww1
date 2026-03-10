@@ -1,0 +1,339 @@
+import { useState } from "react";
+
+const questions = [
+  {
+    q: "Which alliance system paired Germany, Austria-Hungary, and Italy prior to WWI?",
+    options: ["Triple Entente", "Triple Alliance", "Central Pact", "Dual Monarchy"],
+    answer: 1,
+    explanation: "The Triple Alliance (1882) bound Germany, Austria-Hungary, and Italy — though Italy later switched sides in 1915."
+  },
+  {
+    q: "The Schlieffen Plan called for Germany to first rapidly defeat which country before turning east?",
+    options: ["Russia", "Britain", "France", "Serbia"],
+    answer: 2,
+    explanation: "The plan aimed to knock France out quickly via Belgium, then redirect forces to fight Russia on the Eastern Front."
+  },
+  {
+    q: "Which specific event on June 28, 1914 triggered the July Crisis?",
+    options: ["Germany's invasion of Belgium", "Austria's ultimatum to Serbia", "Assassination of Archduke Franz Ferdinand", "Russia's mobilization order"],
+    answer: 2,
+    explanation: "Gavrilo Princip, a Bosnian Serb nationalist, assassinated Archduke Franz Ferdinand in Sarajevo, setting off the chain of events."
+  },
+  {
+    q: "The 'blank check' refers to Germany's promise of unconditional support to which country?",
+    options: ["Ottoman Empire", "Bulgaria", "Austria-Hungary", "Serbia"],
+    answer: 2,
+    explanation: "On July 5-6, 1914, Kaiser Wilhelm II gave Austria-Hungary a 'blank check' — full German backing regardless of action taken against Serbia."
+  },
+  {
+    q: "Which of the following was NOT one of the 'long-term causes' identified by historians under the MAIN acronym?",
+    options: ["Militarism", "Anarchy", "Imperialism", "Nationalism"],
+    answer: 1,
+    explanation: "MAIN stands for Militarism, Alliances, Imperialism, Nationalism. 'Anarchy' is not part of the framework."
+  },
+  {
+    q: "The 1839 Treaty of London, which Germany famously dismissed as a 'scrap of paper,' guaranteed the neutrality of which nation?",
+    options: ["France", "Belgium", "Luxembourg", "Switzerland"],
+    answer: 1,
+    explanation: "Britain entered the war partly citing its obligation to defend Belgian neutrality under the 1839 Treaty of London."
+  },
+  {
+    q: "Which battle (1916) became the longest of WWI, lasting approximately 10 months and resulting in ~700,000 casualties?",
+    options: ["Battle of the Somme", "Battle of Verdun", "Battle of Ypres", "Battle of Tannenberg"],
+    answer: 1,
+    explanation: "The Battle of Verdun (Feb–Dec 1916) was a French-German bloodbath. Germany's Falkenhayn aimed to 'bleed France white.'"
+  },
+  {
+    q: "The Zimmermann Telegram (1917) proposed a military alliance between Germany and which country against the United States?",
+    options: ["Brazil", "Cuba", "Mexico", "Argentina"],
+    answer: 2,
+    explanation: "German Foreign Secretary Arthur Zimmermann proposed that Mexico attack the US in exchange for help recovering Texas, New Mexico, and Arizona."
+  },
+  {
+    q: "Which Russian revolutionary event in March 1917 (February by the Julian calendar) forced Tsar Nicholas II to abdicate?",
+    options: ["Bolshevik Revolution", "February Revolution", "October Revolution", "Kronstadt Rebellion"],
+    answer: 1,
+    explanation: "The February Revolution (March 1917 in the Gregorian calendar) overthrew the Tsar. The Bolsheviks seized power later in October 1917."
+  },
+  {
+    q: "The Treaty of Brest-Litovsk (March 1918) ended the war between Germany and which power?",
+    options: ["France", "Ottoman Empire", "Romania", "Russia"],
+    answer: 3,
+    explanation: "The Bolshevik government signed Brest-Litovsk, ceding enormous territories (Poland, Ukraine, Baltic states) to exit the war."
+  },
+  {
+    q: "Under the War Guilt Clause (Article 231) of the Treaty of Versailles, which country was forced to accept sole responsibility for WWI?",
+    options: ["Austria", "Ottoman Empire", "Germany", "All Central Powers jointly"],
+    answer: 2,
+    explanation: "Article 231 placed the blame exclusively on Germany, providing the legal basis for reparations demanded by the Allies."
+  },
+  {
+    q: "What was the total reparations figure imposed on Germany by the Reparations Commission in 1921?",
+    options: ["$10 billion", "132 billion gold marks", "50 billion francs", "£5 billion"],
+    answer: 1,
+    explanation: "The final figure was set at 132 billion gold marks (~$33 billion), though economists like Keynes argued it was punitive and unworkable."
+  },
+  {
+    q: "Which of Wilson's Fourteen Points directly addressed the creation of a new international peacekeeping body?",
+    options: ["Point 1", "Point 5", "Point 14", "Point 10"],
+    answer: 2,
+    explanation: "Point 14 called for the formation of a 'general association of nations' — which became the League of Nations."
+  },
+  {
+    q: "The Gallipoli Campaign (1915–16) was primarily intended to knock which Central Power out of the war?",
+    options: ["Bulgaria", "Germany", "Austria-Hungary", "Ottoman Empire"],
+    answer: 3,
+    explanation: "Churchill championed the Dardanelles/Gallipoli operation to open a supply route to Russia and force the Ottomans out of the war."
+  },
+  {
+    q: "Which German military strategy in early 1917 was the most significant factor in drawing the United States into WWI?",
+    options: ["Bombing of London", "Unrestricted submarine warfare", "The Schlieffen Plan", "Gas attacks on Allied trenches"],
+    answer: 1,
+    explanation: "Germany's resumption of unrestricted submarine warfare in February 1917 — threatening neutral ships — was a key trigger for US entry in April 1917."
+  },
+  {
+    q: "The term 'war of attrition' most accurately describes which strategic reality of WWI's Western Front?",
+    options: ["Rapid movement of troops via railways", "Using poison gas to break enemy lines", "Grinding down enemy manpower and resources rather than decisive battle", "Strategic bombing of industrial centers"],
+    answer: 2,
+    explanation: "Neither side could achieve a breakthrough, so both relied on wearing down the opponent's men and materiel until collapse."
+  },
+  {
+    q: "Which naval battle in May–June 1916 was the largest of WWI, fought between Britain and Germany in the North Sea?",
+    options: ["Battle of Jutland", "Battle of Dogger Bank", "Battle of Heligoland Bight", "Battle of Coronel"],
+    answer: 0,
+    explanation: "The Battle of Jutland was inconclusive but strategically important — the German High Seas Fleet never again seriously challenged British naval supremacy."
+  },
+  {
+    q: "Historian Fritz Fischer argued controversially that Germany bore primary responsibility for WWI because of its:",
+    options: ["Failure to honor the Schlieffen Plan", "Deliberate pursuit of European hegemony and world power (Weltpolitik)", "Miscalculation over the blank check", "Aggressive naval buildup under Tirpitz"],
+    answer: 1,
+    explanation: "Fischer's 1961 work 'Germany's Aims in the First World War' argued Germany intentionally sought a major war to achieve continental domination."
+  },
+  {
+    q: "Which clause of the Treaty of Versailles limited the German army to 100,000 men and banned conscription?",
+    options: ["Article 160", "Article 231", "Article 48", "Article 10"],
+    answer: 0,
+    explanation: "Article 160 (Part V, Military Clauses) capped the Reichswehr at 100,000 volunteers with no general staff or heavy weapons."
+  },
+  {
+    q: "The 'Stab-in-the-back myth' (Dolchstoßlegende) that emerged in postwar Germany falsely blamed defeat on which groups?",
+    options: ["The German High Command", "Jews and socialists on the home front", "The Austro-Hungarian alliance", "Kaiser Wilhelm's abdication"],
+    answer: 1,
+    explanation: "Right-wing nationalists — including later the Nazis — promoted the myth that Germany's military was 'undefeated in the field' but betrayed by internal enemies, especially Jews and Marxists."
+  },
+  {
+    q: "Which empire's dissolution created the post-war 'Successor States' of Czechoslovakia, Yugoslavia, Hungary, Austria, and Poland?",
+    options: ["Russian Empire", "German Empire", "Ottoman Empire", "Austro-Hungarian Empire"],
+    answer: 3,
+    explanation: "The Treaty of Saint-Germain-en-Laye (1919) and Treaty of Trianon (1920) formally dissolved Austria-Hungary into multiple successor states."
+  },
+  {
+    q: "John Maynard Keynes's 1919 work 'The Economic Consequences of the Peace' argued that the Versailles reparations would:",
+    options: ["Stabilize European economies", "Be insufficient to rebuild France and Belgium", "Devastate the German economy and destabilize Europe", "Fairly compensate the victorious powers"],
+    answer: 2,
+    explanation: "Keynes resigned from the British delegation and wrote that excessive reparations would impoverish Germany and sow the seeds of another conflict — a famously prescient critique."
+  },
+  {
+    q: "The Balfour Declaration (1917) pledged British support for the establishment of a national home for which group?",
+    options: ["Arab nationalists in Mesopotamia", "Armenians in Anatolia", "Jewish people in Palestine", "Kurds in the Ottoman Empire"],
+    answer: 2,
+    explanation: "Foreign Secretary Arthur Balfour's letter to Lord Rothschild stated Britain viewed 'with favour the establishment in Palestine of a national home for the Jewish people.'"
+  },
+  {
+    q: "Which of the following best characterizes the U.S. Senate's response to the Treaty of Versailles?",
+    options: ["Ratified with minor amendments", "Rejected primarily due to opposition to the League of Nations", "Approved after Wilson compromised on reparations", "Passed but with reservations about war guilt"],
+    answer: 1,
+    explanation: "Led by Senator Henry Cabot Lodge, the Senate rejected the treaty twice (1919–20), primarily fearing the League's collective security obligations would entangle the US in future wars."
+  },
+  {
+    q: "Poison gas was first used on a massive scale at which 1915 battle?",
+    options: ["Second Battle of Ypres", "Battle of the Somme", "Battle of Loos", "Battle of Neuve Chapelle"],
+    answer: 0,
+    explanation: "Germany deployed chlorine gas against French and Algerian troops at the Second Battle of Ypres (April 1915), shocking the world."
+  },
+  {
+    q: "The 'Race to the Sea' in autumn 1914 resulted in:",
+    options: ["Germany capturing the English Channel ports", "Both sides extending trenches to the North Sea, creating a continuous front", "A French breakthrough at the Marne", "British forces landing in Flanders"],
+    answer: 1,
+    explanation: "Both armies repeatedly tried to outflank each other northward until trenches extended from the Swiss border to the North Sea — locking in the stalemate."
+  },
+  {
+    q: "Which of the following BEST explains why the July Crisis escalated so rapidly into a world war?",
+    options: ["The alliance system created a chain reaction of mobilization obligations", "Germany deliberately planned a world war years in advance", "Britain's failure to clearly warn Germany it would intervene", "All of the above represent valid historical interpretations"],
+    answer: 3,
+    explanation: "Historians debate the causes — the alliance mechanism, German aggression, and British ambiguity all feature in serious scholarly accounts. No single explanation is universally accepted."
+  },
+  {
+    q: "The Sykes-Picot Agreement (1916) secretly divided future Arab territories of the Ottoman Empire between which two powers?",
+    options: ["USA and Britain", "Britain and France", "France and Russia", "Britain and Italy"],
+    answer: 1,
+    explanation: "British diplomat Mark Sykes and French diplomat François Georges-Picot drew arbitrary lines dividing the Levant into British and French spheres — reshaping the modern Middle East."
+  },
+  {
+    q: "Which German Spring Offensive operation in March 1918 initially achieved the largest territorial gains on the Western Front since 1914?",
+    options: ["Operation Michael", "Operation Georgette", "Operation Blücher-Yorck", "Operation Gneisenau"],
+    answer: 0,
+    explanation: "Operation Michael (March 21, 1918) used new 'stormtrooper' infiltration tactics to break the British lines near the Somme, advancing up to 40 miles — but Germany lacked reserves to exploit it."
+  },
+  {
+    q: "The 'Hundred Days Offensive' (August–November 1918) that ended WWI began with which battle, often called 'the black day of the German Army'?",
+    options: ["Battle of St. Quentin Canal", "Battle of Amiens", "Second Battle of the Marne", "Battle of the Argonne Forest"],
+    answer: 1,
+    explanation: "The Battle of Amiens (August 8, 1918) used massed tanks and air power to shatter German lines. Ludendorff called it Germany's 'black day,' recognizing the war was lost."
+  }
+];
+
+export default function WWITest() {
+  const [answers, setAnswers] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [current, setCurrent] = useState(0);
+
+  const handleSelect = (qIdx, optIdx) => {
+    if (submitted) return;
+    setAnswers(prev => ({ ...prev, [qIdx]: optIdx }));
+  };
+
+  const score = submitted
+    ? questions.reduce((acc, q, i) => acc + (answers[i] === q.answer ? 1 : 0), 0)
+    : 0;
+
+  const grade = score >= 27 ? "5" : score >= 24 ? "4" : score >= 20 ? "3" : score >= 15 ? "2" : "1";
+
+  const allAnswered = Object.keys(answers).length === questions.length;
+
+  return (
+    <div style={{
+      minHeight: "100vh",
+      background: "#1a0f00",
+      backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(139,90,43,0.05) 40px, rgba(139,90,43,0.05) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(139,90,43,0.05) 40px, rgba(139,90,43,0.05) 41px)",
+      fontFamily: "'Georgia', serif",
+      padding: "40px 20px",
+      color: "#e8d5b0"
+    }}>
+      <div style={{ maxWidth: 820, margin: "0 auto" }}>
+
+        {/* Header */}
+        <div style={{ textAlign: "center", marginBottom: 48, borderBottom: "2px solid #8b5a2b", paddingBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 6, color: "#a07840", textTransform: "uppercase", marginBottom: 12 }}>Advanced Placement History</div>
+          <h1 style={{ fontSize: 38, fontWeight: "bold", color: "#f0c060", margin: "0 0 8px", textShadow: "0 2px 8px rgba(0,0,0,0.5)", letterSpacing: 2 }}>WORLD WAR I</h1>
+          <div style={{ fontSize: 15, color: "#b08850", letterSpacing: 3 }}>THE GREAT WAR · 1914 – 1919</div>
+          <div style={{ marginTop: 16, display: "flex", justifyContent: "center", gap: 32, fontSize: 13, color: "#907040" }}>
+            <span>30 Questions</span><span>·</span><span>AP College Level</span><span>·</span>
+            <span style={{ color: submitted ? (score >= 20 ? "#6fce7f" : "#e06060") : "#907040" }}>
+              {submitted ? `Score: ${score}/30 (AP ${grade})` : `${Object.keys(answers).length}/30 answered`}
+            </span>
+          </div>
+        </div>
+
+        {/* Score Banner */}
+        {submitted && (
+          <div style={{
+            background: score >= 20 ? "rgba(30,80,40,0.6)" : "rgba(80,20,20,0.6)",
+            border: `1px solid ${score >= 20 ? "#4a9a5a" : "#9a4a4a"}`,
+            borderRadius: 8, padding: "20px 28px", marginBottom: 40, textAlign: "center"
+          }}>
+            <div style={{ fontSize: 28, fontWeight: "bold", color: score >= 20 ? "#7de890" : "#e88080" }}>
+              {score}/30 — AP Score: {grade}
+            </div>
+            <div style={{ fontSize: 13, color: "#c0a060", marginTop: 6 }}>
+              {score >= 27 ? "Outstanding — college credit worthy performance" :
+               score >= 24 ? "Excellent — strong command of WWI material" :
+               score >= 20 ? "Solid — passing AP threshold" :
+               score >= 15 ? "Needs work — review key events and treaties" :
+               "Keep studying — revisit your notes and timeline"}
+            </div>
+          </div>
+        )}
+
+        {/* Questions */}
+        {questions.map((q, i) => {
+          const selected = answers[i];
+          const isCorrect = submitted && selected === q.answer;
+          const isWrong = submitted && selected !== undefined && selected !== q.answer;
+
+          return (
+            <div key={i} style={{
+              marginBottom: 32,
+              background: submitted
+                ? isCorrect ? "rgba(20,60,30,0.4)" : isWrong ? "rgba(70,15,15,0.4)" : "rgba(30,20,10,0.4)"
+                : "rgba(40,28,12,0.5)",
+              border: `1px solid ${submitted ? isCorrect ? "#3a7a4a" : isWrong ? "#7a3a3a" : "#5a4020" : "#5a4020"}`,
+              borderRadius: 8, padding: "24px 28px",
+              transition: "all 0.3s"
+            }}>
+              <div style={{ display: "flex", gap: 14, marginBottom: 16 }}>
+                <span style={{
+                  minWidth: 28, height: 28, borderRadius: "50%",
+                  background: submitted ? isCorrect ? "#2a6a3a" : isWrong ? "#6a2a2a" : "#3a2a10" : "#3a2a10",
+                  border: `1px solid ${submitted ? isCorrect ? "#5a9a6a" : isWrong ? "#9a5a5a" : "#7a5a30" : "#7a5a30"}`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 12, color: "#c0a060", fontWeight: "bold", flexShrink: 0
+                }}>{i + 1}</span>
+                <p style={{ margin: 0, fontSize: 15.5, lineHeight: 1.6, color: "#ead8b0", fontWeight: "500" }}>{q.q}</p>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginLeft: 42 }}>
+                {q.options.map((opt, j) => {
+                  const isSelected = selected === j;
+                  const isAnswer = q.answer === j;
+                  let bg = "rgba(60,40,15,0.4)";
+                  let border = "1px solid #6a4a20";
+                  let color = "#c8b080";
+                  if (!submitted && isSelected) { bg = "rgba(120,80,20,0.5)"; border = "1px solid #c8902a"; color = "#f0d090"; }
+                  if (submitted && isAnswer) { bg = "rgba(30,80,40,0.6)"; border = "1px solid #5a9a6a"; color = "#a0e8b0"; }
+                  if (submitted && isSelected && !isAnswer) { bg = "rgba(80,20,20,0.6)"; border = "1px solid #9a5a5a"; color = "#e8a0a0"; }
+
+                  return (
+                    <button key={j} onClick={() => handleSelect(i, j)} style={{
+                      background: bg, border, borderRadius: 6, padding: "10px 14px",
+                      color, fontSize: 13.5, textAlign: "left", cursor: submitted ? "default" : "pointer",
+                      transition: "all 0.15s", lineHeight: 1.4, fontFamily: "Georgia, serif"
+                    }}>
+                      <span style={{ opacity: 0.6, marginRight: 8, fontSize: 11 }}>{["A","B","C","D"][j]}.</span>{opt}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {submitted && (
+                <div style={{
+                  marginTop: 14, marginLeft: 42, padding: "10px 14px",
+                  background: "rgba(20,15,5,0.5)", borderLeft: "3px solid #8b6a30",
+                  borderRadius: "0 6px 6px 0", fontSize: 13, color: "#c0a870", lineHeight: 1.6
+                }}>
+                  <strong style={{ color: "#e0c080" }}>Explanation: </strong>{q.explanation}
+                </div>
+              )}
+            </div>
+          );
+        })}
+
+        {/* Submit */}
+        {!submitted && (
+          <div style={{ textAlign: "center", marginTop: 16 }}>
+            <button onClick={() => setSubmitted(true)} disabled={!allAnswered} style={{
+              background: allAnswered ? "linear-gradient(135deg, #9a6a20, #c89030)" : "#3a2a10",
+              border: allAnswered ? "1px solid #e0a040" : "1px solid #4a3a20",
+              color: allAnswered ? "#fff8e8" : "#6a5a40",
+              padding: "14px 48px", fontSize: 15, fontFamily: "Georgia, serif",
+              letterSpacing: 2, borderRadius: 6, cursor: allAnswered ? "pointer" : "not-allowed",
+              textTransform: "uppercase", transition: "all 0.2s"
+            }}>
+              {allAnswered ? "Submit Examination" : `Answer All Questions (${30 - Object.keys(answers).length} remaining)`}
+            </button>
+          </div>
+        )}
+
+        {submitted && (
+          <div style={{ textAlign: "center", marginTop: 24 }}>
+            <button onClick={() => { setAnswers({}); setSubmitted(false); window.scrollTo(0,0); }} style={{
+              background: "transparent", border: "1px solid #6a4a20", color: "#a07040",
+              padding: "10px 32px", fontSize: 13, fontFamily: "Georgia, serif",
+              letterSpacing: 2, borderRadius: 6, cursor: "pointer", textTransform: "uppercase"
+            }}>Retake Test</button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
