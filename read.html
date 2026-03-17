@@ -39,6 +39,8 @@
       height: auto;
       margin: 40px auto;
       display: block;
+      position: relative;
+      z-index: 1;
     }
 
     /* Book button container */
@@ -46,20 +48,22 @@
       display: flex;
       justify-content: center;
       gap: 1in; /* EXACT 1 inch spacing */
-      margin-top: 20px;
+      margin-top: -150px; /* moves the books up to overlap the title */
+      z-index: 2;
+      position: relative;
     }
 
     /* Book images */
     .book-buttons img {
-      width: 200px;
-      height: 300px;
+      width: 400px;   /* bigger width */
+      height: 600px;  /* bigger height */
       object-fit: cover;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
 
     .book-buttons img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     footer {
