@@ -42,28 +42,21 @@
       z-index: 1;
     }
 
-    /* BUTTON BOX (STRONGER OVERLAP) */
-    .contact-box {
-      background: white;
-      padding: 40px;
-      margin: -120px auto 30px auto; /* ⬅️ stronger overlap */
-      width: 90%;
-      max-width: 650px;
-      border-radius: 20px;
-      border: 3px solid #000;
+    /* BUTTONS (NO BOX + HIGHER OVERLAP) */
+    .buttons {
+      margin: -180px auto 40px auto; /* ⬅️ moved MUCH higher */
       position: relative;
       z-index: 2;
     }
 
-    /* BIGGER BUTTONS */
     .button {
       background-color: white;
       color: #ff0066;
-      font-size: 2rem; /* ⬅️ bigger text */
+      font-size: 2rem;
       font-weight: bold;
-      padding: 20px 45px; /* ⬅️ bigger button */
+      padding: 22px 50px;
       border: 3px solid #000;
-      border-radius: 35px;
+      border-radius: 40px;
       text-decoration: none;
       transition: all 0.3s ease;
       display: inline-block;
@@ -96,8 +89,8 @@
   <!-- TITLE -->
   <img src="contact.png" alt="Contact Title" class="title">
 
-  <!-- BIG OVERLAPPING BUTTONS -->
-  <div class="contact-box">
+  <!-- FLOATING BUTTONS (NO WHITE BOX) -->
+  <div class="buttons">
     <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-ssSQKNLgYSm_mh1GhcekQbIgi-QZhsIto6U8qIlTZzZzwQ/viewform?usp=header" 
