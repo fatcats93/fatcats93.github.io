@@ -31,10 +31,10 @@
       color: #d1006c;
     }
 
-    /* TITLE */
+    /* SMALLER TITLE (FIX BORDER OVERFLOW) */
     .title {
-      width: 95%;
-      max-width: 1300px;
+      width: 85%;              /* ⬅️ smaller than before */
+      max-width: 1000px;
       height: auto;
       margin: 30px auto 0 auto;
       display: block;
@@ -42,9 +42,9 @@
       z-index: 1;
     }
 
-    /* BUTTONS (NO BOX + HIGHER OVERLAP) */
+    /* BIGGER BUTTONS + HIGH OVERLAP */
     .buttons {
-      margin: -180px auto 40px auto; /* ⬅️ moved MUCH higher */
+      margin: -200px auto 40px auto; /* ⬅️ still high overlap */
       position: relative;
       z-index: 2;
     }
@@ -52,15 +52,15 @@
     .button {
       background-color: white;
       color: #ff0066;
-      font-size: 2rem;
+      font-size: 2.6rem;   /* 🔥 WAY BIGGER TEXT */
       font-weight: bold;
-      padding: 22px 50px;
-      border: 3px solid #000;
-      border-radius: 40px;
+      padding: 30px 70px;  /* 🔥 WAY BIGGER BUTTON */
+      border: 4px solid #000;
+      border-radius: 50px;
       text-decoration: none;
       transition: all 0.3s ease;
       display: inline-block;
-      margin: 15px;
+      margin: 20px;
     }
 
     .button:hover {
@@ -89,7 +89,7 @@
   <!-- TITLE -->
   <img src="contact.png" alt="Contact Title" class="title">
 
-  <!-- FLOATING BUTTONS (NO WHITE BOX) -->
+  <!-- BIG FLOATING BUTTONS -->
   <div class="buttons">
     <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
 
