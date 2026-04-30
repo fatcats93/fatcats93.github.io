@@ -14,7 +14,6 @@
       text-align: center;
     }
 
-    /* Navigation bar */
     nav {
       background-color: #ffccdd;
       padding: 15px;
@@ -34,11 +33,22 @@
       color: #d1006c;
     }
 
-    /* Buttons section */
+    /* TITLE (TOP) */
+    .title {
+      width: 95%;
+      max-width: 1300px;
+      height: auto;
+      margin: 30px auto 0 auto;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* BUTTON BOX (OVERLAPS TITLE) */
     .contact-box {
       background: white;
       padding: 30px;
-      margin: 30px auto;
+      margin: -60px auto 30px auto; /* 👈 negative margin creates overlap */
       width: 90%;
       max-width: 600px;
       border-radius: 20px;
@@ -47,7 +57,6 @@
       z-index: 2;
     }
 
-    /* Button style */
     .button {
       background-color: white;
       color: #ff0066;
@@ -68,17 +77,6 @@
       transform: scale(1.1);
     }
 
-    /* HUGE title */
-    .title {
-      width: 95%;
-      max-width: 1300px;
-      height: auto;
-      margin: 10px auto 40px auto;
-      display: block;
-      position: relative;
-      z-index: 1;
-    }
-
     footer {
       margin-top: 40px;
       padding: 20px;
@@ -91,13 +89,15 @@
 
 <body>
 
-  <!-- Navigation -->
   <nav>
     <a href="index.html">Homepage</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Buttons FIRST (so they appear on top visually) -->
+  <!-- TITLE ON TOP -->
+  <img src="contact.png" alt="Contact Title" class="title">
+
+  <!-- BUTTONS OVERLAP TITLE -->
   <div class="contact-box">
     <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
 
@@ -106,9 +106,6 @@
       Leave Feedback
     </a>
   </div>
-
-  <!-- HUGE TITLE -->
-  <img src="contact.png" alt="Contact Title" class="title">
 
   <footer>
     © 2025 Penelope + Porky. All Rights Reserved.
