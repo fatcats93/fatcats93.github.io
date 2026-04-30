@@ -17,8 +17,6 @@
     nav {
       background-color: #ffccdd;
       padding: 15px;
-      position: relative;
-      z-index: 3;
     }
 
     nav a {
@@ -33,7 +31,7 @@
       color: #d1006c;
     }
 
-    /* TITLE (TOP) */
+    /* TITLE */
     .title {
       width: 95%;
       max-width: 1300px;
@@ -44,31 +42,32 @@
       z-index: 1;
     }
 
-    /* BUTTON BOX (OVERLAPS TITLE) */
+    /* BUTTON BOX (STRONGER OVERLAP) */
     .contact-box {
       background: white;
-      padding: 30px;
-      margin: -60px auto 30px auto; /* 👈 negative margin creates overlap */
+      padding: 40px;
+      margin: -120px auto 30px auto; /* ⬅️ stronger overlap */
       width: 90%;
-      max-width: 600px;
+      max-width: 650px;
       border-radius: 20px;
       border: 3px solid #000;
       position: relative;
       z-index: 2;
     }
 
+    /* BIGGER BUTTONS */
     .button {
       background-color: white;
       color: #ff0066;
-      font-size: 1.5rem;
+      font-size: 2rem; /* ⬅️ bigger text */
       font-weight: bold;
-      padding: 15px 30px;
+      padding: 20px 45px; /* ⬅️ bigger button */
       border: 3px solid #000;
-      border-radius: 30px;
+      border-radius: 35px;
       text-decoration: none;
       transition: all 0.3s ease;
       display: inline-block;
-      margin: 10px;
+      margin: 15px;
     }
 
     .button:hover {
@@ -94,10 +93,10 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- TITLE ON TOP -->
+  <!-- TITLE -->
   <img src="contact.png" alt="Contact Title" class="title">
 
-  <!-- BUTTONS OVERLAP TITLE -->
+  <!-- BIG OVERLAPPING BUTTONS -->
   <div class="contact-box">
     <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
 
