@@ -7,13 +7,13 @@
   <title>Penelope + Porky</title>
 
   <style>
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #ff66b2;
       color: #000;
       text-align: center;
-      overflow-x: hidden;
     }
 
     nav {
@@ -33,6 +33,8 @@
       color: #d1006c;
     }
 
+    /* BIGGER HEADER / LOGO */
+
     header {
       padding: 0;
       margin-bottom: -120px;
@@ -41,30 +43,31 @@
     }
 
     header img {
-      width: 110%;
-      max-width: none;
+      width: 100%;
+      max-width: 2200px;
       height: auto;
       display: block;
-      margin-left: -5%;
+      margin: 0 auto;
     }
 
+    /* WELCOME BOX OVERLAPS HEADER */
+
     .welcome {
-      margin: 0 auto 50px auto;
-      padding: 140px 40px 40px 40px;
+      margin: 0 auto 40px auto;
+      padding: 150px 40px 40px 40px;
       width: 90%;
       max-width: 1200px;
       background: white;
-      border-radius: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       position: relative;
       z-index: 1;
     }
 
     .welcome h2 {
       font-family: 'Brush Script MT', cursive;
-      font-size: clamp(100px, 14vw, 200px);
+      font-size: clamp(70px, 10vw, 120px);
       margin: 0 0 20px 0;
-      line-height: 0.9;
     }
 
     .welcome p {
@@ -78,9 +81,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 60px;
+      gap: 50px;
       flex-wrap: wrap;
-      margin-top: 60px;
+      margin-top: 50px;
       padding: 20px;
     }
 
@@ -97,7 +100,7 @@
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 50px;
       padding: 25px;
       background: #ffccdd;
       color: #333;
@@ -105,6 +108,11 @@
     }
 
     @media (max-width: 768px) {
+
+      nav {
+        padding: 20px;
+      }
+
       nav a {
         display: block;
         margin: 15px 0;
@@ -112,31 +120,27 @@
       }
 
       header {
-        margin-bottom: -60px;
-      }
-
-      header img {
-        width: 125%;
-        margin-left: -12.5%;
+        margin-bottom: -70px;
       }
 
       .welcome {
-        width: 92%;
-        padding: 80px 20px 30px 20px;
+        padding: 90px 25px 25px 25px;
       }
 
-      .welcome h2 {
-        font-size: clamp(70px, 18vw, 120px);
-      }
-
-      .welcome p {
-        font-size: 24px;
+      .book-buttons {
+        gap: 30px;
       }
 
       .book-buttons img {
         max-width: 90%;
       }
+
+      footer {
+        font-size: 18px;
+      }
+
     }
+
   </style>
 
 </head>
@@ -157,18 +161,23 @@
 
 ```
 <p>
-  ...to the official Penelope and Porky website! I created this comic in my freshman year of high school and decided to share it with hopefully-eventually the world! Click the READ button to read the full comics! You can also contact me with any questions or feedback! Have fun!
+  ...to the official Penelope and Porky website! I created this comic
+  during my freshman year of high school and decided to share it with
+  the world! Click on a book below to read the comics and follow the
+  adventures of Penelope and her unicorn friend Porky. You can also
+  contact me with questions, comments, or feedback. Have fun!
 </p>
 ```
 
   </section>
 
   <div class="book-buttons">
-    <a href="https://fatcats93.github.io/origin.html" target="_blank">
-      <img src="Book1.png" alt="Book 1">
-    </a>
 
 ```
+<a href="https://fatcats93.github.io/origin.html" target="_blank">
+  <img src="Book1.png" alt="Book 1">
+</a>
+
 <a href="https://fatcats93.github.io/book2.html" target="_blank">
   <img src="book2.png" alt="Book 2">
 </a>
