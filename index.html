@@ -2,192 +2,175 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Penelope + Porky</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penelope + Porky</title>
 
-  <style>
+<style>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ff66b2;
-      color: #000;
-      text-align: center;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#ff66b2;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+nav{
+    background:#ffccdd;
+    padding:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    margin:0 20px;
+    font-size:clamp(20px,3vw,32px);
+}
+
+nav a:hover{
+    color:#d1006c;
+}
+
+/* GIANT LOGO */
+
+header{
+    position:relative;
+    z-index:1;
+}
+
+header img{
+    width:100%;
+    max-width:2600px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+/* WELCOME BOX ON TOP OF LOGO */
+
+.welcome{
+    width:85%;
+    max-width:1200px;
+
+    margin:-220px auto 40px auto;
+
+    padding:40px;
+
+    background:white;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    position:relative;
+
+    z-index:5;
+}
+
+.welcome h2{
+    font-family:'Brush Script MT',cursive;
+    font-size:clamp(80px,10vw,140px);
+    margin:0;
+}
+
+.welcome p{
+    font-size:clamp(22px,3vw,36px);
+    line-height:1.8;
+}
+
+.book-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+.book-buttons img{
+    width:100%;
+    max-width:500px;
+    height:auto;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.book-buttons img:hover{
+    transform:scale(1.08);
+}
+
+footer{
+    margin-top:50px;
+    padding:25px;
+    background:#ffccdd;
+    font-size:18px;
+}
+
+@media(max-width:768px){
+
+    .welcome{
+        margin:-100px auto 40px auto;
+        width:90%;
+        padding:25px;
     }
 
-    nav {
-      background-color: #ffccdd;
-      padding: 20px;
+    nav a{
+        display:block;
+        margin:10px 0;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      margin: 0 20px;
-      font-size: clamp(20px, 3vw, 32px);
+    .book-buttons img{
+        max-width:90%;
     }
 
-    nav a:hover {
-      color: #d1006c;
-    }
+}
 
-    /* BIGGER HEADER / LOGO */
-
-    header {
-      padding: 0;
-      margin-bottom: -120px;
-      position: relative;
-      z-index: 2;
-    }
-
-    header img {
-      width: 100%;
-      max-width: 2200px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* WELCOME BOX OVERLAPS HEADER */
-
-    .welcome {
-      margin: 0 auto 40px auto;
-      padding: 150px 40px 40px 40px;
-      width: 90%;
-      max-width: 1200px;
-      background: white;
-      border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 1;
-    }
-
-    .welcome h2 {
-      font-family: 'Brush Script MT', cursive;
-      font-size: clamp(70px, 10vw, 120px);
-      margin: 0 0 20px 0;
-    }
-
-    .welcome p {
-      font-size: clamp(22px, 3vw, 36px);
-      line-height: 1.8;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .book-buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      flex-wrap: wrap;
-      margin-top: 50px;
-      padding: 20px;
-    }
-
-    .book-buttons img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .book-buttons img:hover {
-      transform: scale(1.08);
-    }
-
-    footer {
-      margin-top: 50px;
-      padding: 25px;
-      background: #ffccdd;
-      color: #333;
-      font-size: 18px;
-    }
-
-    @media (max-width: 768px) {
-
-      nav {
-        padding: 20px;
-      }
-
-      nav a {
-        display: block;
-        margin: 15px 0;
-        font-size: 28px;
-      }
-
-      header {
-        margin-bottom: -70px;
-      }
-
-      .welcome {
-        padding: 90px 25px 25px 25px;
-      }
-
-      .book-buttons {
-        gap: 30px;
-      }
-
-      .book-buttons img {
-        max-width: 90%;
-      }
-
-      footer {
-        font-size: 18px;
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
 <body>
 
-  <nav>
-    <a href="index.html">Homepage</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav>
+<a href="index.html">Homepage</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-  <header id="home">
-    <img src="Penelope.jpg" alt="Penelope + Porky Logo">
-  </header>
+<header>
+<img src="Penelope.jpg" alt="Penelope + Porky Logo">
+</header>
 
-  <section class="welcome">
-    <h2>Welcome</h2>
+<section class="welcome">
 
-```
+<h2>Welcome</h2>
+
 <p>
-  ...to the official Penelope and Porky website! I created this comic
-  during my freshman year of high school and decided to share it with
-  the world! Click on a book below to read the comics and follow the
-  adventures of Penelope and her unicorn friend Porky. You can also
-  contact me with questions, comments, or feedback. Have fun!
+...to the official Penelope and Porky website! I created this comic
+during my freshman year of high school and decided to share it with
+the world. Click on a book below to read the comics and follow the
+adventures of Penelope and her unicorn friend Porky. You can also
+contact me with questions, comments, or feedback. Have fun!
 </p>
-```
 
-  </section>
+</section>
 
-  <div class="book-buttons">
+<div class="book-buttons">
 
-```
 <a href="https://fatcats93.github.io/origin.html" target="_blank">
-  <img src="Book1.png" alt="Book 1">
+<img src="Book1.png" alt="Book 1">
 </a>
 
 <a href="https://fatcats93.github.io/book2.html" target="_blank">
-  <img src="book2.png" alt="Book 2">
+<img src="book2.png" alt="Book 2">
 </a>
-```
 
-  </div>
+</div>
 
-  <footer>
-    © 2025 Penelope + Porky. All Rights Reserved.
-  </footer>
+<footer>
+© 2025 Penelope + Porky. All Rights Reserved.
+</footer>
 
 </body>
 </html>
