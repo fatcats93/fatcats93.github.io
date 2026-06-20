@@ -17,7 +17,7 @@ body{
     overflow-x:hidden;
 }
 
-/* HUGE NAVIGATION BAR */
+/* NAV BAR */
 
 nav{
     background:#ffccdd;
@@ -36,7 +36,7 @@ nav a:hover{
     color:#d1006c;
 }
 
-/* LOGO IMAGE */
+/* HEADER IMAGE */
 
 header{
     position:relative;
@@ -51,35 +51,32 @@ header img{
     margin:0 auto;
 }
 
-/* WELCOME BOX */
+/* WELCOME BOX (OVERLAPS HEADER) */
 
 .welcome{
     width:95%;
     max-width:1600px;
-
     margin:-180px auto 50px auto;
-
     padding:50px;
-
     background:white;
-
     border-radius:25px;
-
     box-shadow:0 8px 20px rgba(0,0,0,.15);
-
     position:relative;
-
     z-index:5;
 }
 
+/* SMALLER "WELCOME" TITLE */
+
 .welcome h2{
     font-family:'Brush Script MT',cursive;
-    font-size:clamp(90px,10vw,150px);
+    font-size:clamp(55px,6vw,90px);
     margin:0 0 20px 0;
 }
 
+/* BIGGER PARAGRAPH TEXT */
+
 .welcome p{
-    font-size:clamp(24px,3vw,38px);
+    font-size:clamp(34px,4.5vw,54px);
     line-height:1.8;
     max-width:1400px;
     margin:0 auto;
@@ -108,6 +105,8 @@ header img{
     transform:scale(1.08);
 }
 
+/* FOOTER */
+
 footer{
     margin-top:50px;
     padding:30px;
@@ -115,6 +114,8 @@ footer{
     color:#333;
     font-size:22px;
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -135,11 +136,11 @@ footer{
     }
 
     .welcome h2{
-        font-size:clamp(60px,14vw,100px);
+        font-size:clamp(50px,12vw,80px);
     }
 
     .welcome p{
-        font-size:22px;
+        font-size:26px;
     }
 
     .book-buttons img{
@@ -158,7 +159,7 @@ footer{
     <a href="contact.html">Contact</a>
 </nav>
 
-<header id="home">
+<header>
     <img src="Penelope.jpg" alt="Penelope + Porky Logo">
 </header>
 
