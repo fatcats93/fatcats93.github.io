@@ -12,9 +12,14 @@
       background-color: #ff66b2;
       color: #000;
       text-align: center;
+
+      /* KEY FIX */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* ===== NAV (FULL WIDTH + RESPONSIVE) ===== */
+    /* NAV */
     nav {
       background-color: #ffccdd;
       padding: 2.5vh 2vw;
@@ -35,7 +40,11 @@
       color: #d1006c;
     }
 
-    /* ===== TITLE (TAKES MOST OF SCREEN) ===== */
+    /* MAIN CONTENT TAKES ALL SPACE */
+    .content {
+      flex: 1;   /* KEY FIX: pushes footer down */
+    }
+
     .title {
       width: 95vw;
       max-width: 1400px;
@@ -44,9 +53,8 @@
       display: block;
     }
 
-    /* ===== BUTTON SECTION ===== */
     .buttons {
-      margin-top: -8vh;
+      margin-top: -6vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -54,7 +62,6 @@
       padding-bottom: 6vh;
     }
 
-    /* BIG RESPONSIVE BUTTONS */
     .button {
       background-color: white;
       color: #ff0066;
@@ -80,30 +87,13 @@
       transform: scale(1.05);
     }
 
-    /* ===== FOOTER ===== */
+    /* ===== FOOTER FIXED TO BOTTOM ===== */
     footer {
-      margin-top: 6vh;
-      padding: 3vh;
       background: #ffccdd;
+      width: 100%;
+      padding: 3vh 0;
+      text-align: center;
       font-size: clamp(14px, 2vw, 18px);
-    }
-
-    /* ===== IPAD / SMALL LAPTOP ADJUSTMENTS ===== */
-    @media (max-width: 1024px) {
-      .buttons {
-        margin-top: -5vh;
-      }
-    }
-
-    /* ===== PHONE ADJUSTMENTS ===== */
-    @media (max-width: 600px) {
-      .buttons {
-        margin-top: 0;
-      }
-
-      .button {
-        width: 90vw;
-      }
     }
   </style>
 </head>
@@ -115,17 +105,23 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <img src="contact.png" alt="Contact Title" class="title">
+  <!-- MAIN CONTENT WRAPPER -->
+  <div class="content">
 
-  <div class="buttons">
-    <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
+    <img src="contact.png" alt="Contact Title" class="title">
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-ssSQKNLgYSm_mh1GhcekQbIgi-QZhsIto6U8qIlTZzZzwQ/viewform?usp=header" 
-       class="button" target="_blank">
-      Leave Feedback
-    </a>
+    <div class="buttons">
+      <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-ssSQKNLgYSm_mh1GhcekQbIgi-QZhsIto6U8qIlTZzZzwQ/viewform?usp=header" 
+         class="button" target="_blank">
+        Leave Feedback
+      </a>
+    </div>
+
   </div>
 
+  <!-- BOTTOM HEADER / FOOTER -->
   <footer>
     © 2025 Penelope + Porky. All Rights Reserved.
   </footer>
