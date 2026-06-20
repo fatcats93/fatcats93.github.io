@@ -19,7 +19,7 @@ body{
     flex-direction:column;
 }
 
-/* NAV (UNCHANGED EXCEPT TEXT SIZE FIX) */
+/* NAV */
 nav{
     background:#ffccdd;
     padding:3vh 2vw;
@@ -33,10 +33,7 @@ nav a{
     text-decoration:none;
     color:#333;
     font-weight:bold;
-
-    /* 🔥 ONLY CHANGE: BIGGER TEXT */
     font-size:clamp(40px,4.5vw,80px);
-
     margin:0 40px;
 }
 
@@ -45,11 +42,11 @@ nav a{
     flex:1;
 }
 
-/* TITLE */
+/* 🔥 TITLE ONLY CHANGE (MADE BIGGER) */
 .title{
-    width:98vw;
-    max-width:1600px;
-    margin:3vh auto 0 auto;
+    width:100vw;              /* was smaller before */
+    max-width:1900px;        /* increased from 1600 */
+    margin:4vh auto 0 auto;
     display:block;
 }
 
@@ -95,7 +92,7 @@ nav a{
     transform:scale(1.03);
 }
 
-/* FOOTER (UNCHANGED FIX) */
+/* FOOTER */
 footer{
     background:#ffccdd;
     width:100%;
