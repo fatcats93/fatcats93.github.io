@@ -16,7 +16,7 @@ body{
     overflow-x:hidden;
 }
 
-/* NAV BAR (KEEP BIG) */
+/* NAV BAR */
 
 nav{
     background:#ffccdd;
@@ -35,22 +35,7 @@ nav a:hover{
     color:#d1006c;
 }
 
-/* BACKGROUND TITLE (RESTORED TO BEFORE) */
-
-.background-title{
-    position:absolute;
-    top:220px;
-    left:0;
-    width:100%;
-    font-size:clamp(80px,12vw,180px);
-    letter-spacing:25px;
-    font-family:'Brush Script MT',cursive;
-    color:rgba(255,255,255,0.35);
-    z-index:0;
-    pointer-events:none;
-}
-
-/* HEADER IMAGE */
+/* HEADER */
 
 header{
     position:relative;
@@ -140,20 +125,14 @@ footer{
         font-size:40px;
     }
 
-    .background-title{
-        top:180px;
-        letter-spacing:15px;
-        font-size:clamp(60px,14vw,120px);
+    header img{
+        width:130%;
+        margin-left:-15%;
     }
 
     .welcome{
         padding:30px;
         margin:-80px auto 40px auto;
-    }
-
-    header img{
-        width:130%;
-        margin-left:-15%;
     }
 
 }
@@ -167,8 +146,6 @@ footer{
     <a href="index.html">Homepage</a>
     <a href="contact.html">Contact</a>
 </nav>
-
-<div class="background-title">WELCOME</div>
 
 <header>
     <img src="Penelope.jpg" alt="Penelope + Porky Logo">
