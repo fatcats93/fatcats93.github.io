@@ -1,142 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Penelope + Porky</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Penelope + Porky</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ff66b2;
-      color: #000;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#ff66b2;
+    color:#000;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* ===== NAV (MATCHED EXACTLY) ===== */
+nav{
+    background:#ffccdd;
+    padding:40px;
+    position:relative;
+    z-index:5;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    margin:0 40px;
+    font-size:clamp(28px,3vw,45px);
+}
+
+/* ===== HEADER IMAGE (MATCHED STYLE) ===== */
+header{
+    position:relative;
+    z-index:3;
+    margin-top:20px;
+}
+
+header img{
+    width:100%;
+    max-width:1800px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+/* ===== BUTTON SECTION (BIG LIKE HOMEPAGE STYLE) ===== */
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+    padding:40px 20px;
+    position:relative;
+    z-index:3;
+}
+
+/* BIG CLICKABLE BLOCK STYLE (matches your “book buttons” energy) */
+.button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    max-width:500px;
+
+    background:white;
+    color:#ff0066;
+
+    font-weight:bold;
+    font-size:clamp(32px,4vw,60px);
+
+    padding:60px 20px;
+
+    border:5px solid #000;
+    border-radius:25px;
+
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.button:hover{
+    transform:scale(1.08);
+    background:#ff0066;
+    color:white;
+}
+
+/* ===== FOOTER (MATCHED STYLE) ===== */
+footer{
+    margin-top:50px;
+    padding:30px;
+    background:#ffccdd;
+    color:#333;
+    font-size:22px;
+    position:relative;
+    z-index:3;
+}
+
+/* ===== MOBILE MATCH ===== */
+@media(max-width:768px){
+
+    nav{
+        padding:25px;
     }
 
-    /* NAV */
-    nav {
-      background-color: #ffccdd;
-      padding: 3vh 2vw;
-      display: flex;
-      justify-content: center;
-      gap: 6vw;
-      flex-wrap: wrap;
+    nav a{
+        margin:0 20px;
+        font-size:clamp(22px,4vw,34px);
     }
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      font-size: clamp(20px, 2.5vw, 32px);
+    .buttons{
+        gap:30px;
     }
 
-    /* MAIN AREA */
-    .content {
-      flex: 1;
+    .button{
+        width:90%;
+        font-size:40px;
+        padding:50px 20px;
     }
+}
 
-    /* TITLE BIGGER */
-    .title {
-      width: 98vw;
-      max-width: 1600px;
-      margin: 3vh auto 0 auto;
-      display: block;
-    }
-
-    /* ===== HUGE BUTTONS (KEY CHANGE) ===== */
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5vh;
-      margin-top: -4vh;
-      padding-bottom: 6vh;
-    }
-
-    .button {
-      background-color: white;
-      color: #ff0066;
-      font-weight: bold;
-
-      /* 🔥 BIGGER + SCALING TEXT */
-      font-size: clamp(28px, 5vw, 80px);
-      line-height: 1;
-
-      /* 🔥 HUGE TALL BUTTONS */
-      padding: clamp(40px, 8vh, 90px) clamp(30px, 10vw, 160px);
-
-      border: 6px solid #000;
-      border-radius: 999px;
-
-      text-decoration: none;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 92vw;
-      max-width: 1100px;
-
-      /* makes text feel “filled” not floating */
-      letter-spacing: 1px;
-    }
-
-    .button:hover {
-      background-color: #ff0066;
-      color: white;
-      transform: scale(1.03);
-    }
-
-    /* FOOTER FULL WIDTH */
-    footer {
-      background: #ffccdd;
-      width: 100%;
-      padding: 3vh 0;
-      font-size: clamp(16px, 2vw, 22px);
-    }
-
-    /* PHONE TWEAK */
-    @media (max-width: 600px) {
-      .button {
-        font-size: 34px;
-        padding: 45px 20px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <nav>
+<nav>
     <a href="index.html">Homepage</a>
     <a href="contact.html">Contact</a>
-  </nav>
+</nav>
 
-  <div class="content">
+<header>
+    <img src="contact.png" alt="Contact Header">
+</header>
 
-    <img src="contact.png" class="title" alt="Contact Title">
+<div class="buttons">
 
-    <div class="buttons">
-      <a href="mailto:veronicafridman63@gmail.com" class="button">
+    <a href="mailto:veronicafridman63@gmail.com" class="button">
         Email Me
-      </a>
+    </a>
 
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-ssSQKNLgYSm_mh1GhcekQbIgi-QZhsIto6U8qIlTZzZzwQ/viewform?usp=header"
-         class="button" target="_blank">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-ssSQKNLgYSm_mh1GhcekQbIgi-QZhsIto6U8qIlTZzZzwQ/viewform?usp=header"
+       class="button" target="_blank">
         Leave Feedback
-      </a>
-    </div>
+    </a>
 
-  </div>
+</div>
 
-  <footer>
+<footer>
     © 2025 Penelope + Porky. All Rights Reserved.
-  </footer>
+</footer>
 
 </body>
 </html>
