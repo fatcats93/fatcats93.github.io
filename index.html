@@ -16,42 +16,55 @@ body{
     overflow-x:hidden;
 }
 
-/* NAV BAR */
+/* NAV */
 
 nav{
     background:#ffccdd;
-    padding:70px;
+    padding:40px;
+    position:relative;
+    z-index:5;
 }
 
 nav a{
     text-decoration:none;
     color:#333;
     font-weight:bold;
-    margin:0 60px;
-    font-size:clamp(40px,5vw,70px);
+    margin:0 40px;
+    font-size:clamp(28px,3vw,45px);
 }
 
-nav a:hover{
-    color:#d1006c;
+/* BACKGROUND WELCOME TITLE (BEHIND EVERYTHING) */
+
+.background-title{
+    position:absolute;
+    top:220px;
+    left:0;
+    width:100%;
+    font-size:clamp(80px,12vw,180px);
+    letter-spacing:25px;
+    font-family:'Brush Script MT',cursive;
+    color:rgba(255,255,255,0.35);
+    z-index:0;
+    pointer-events:none;
 }
 
-/* HEADER */
+/* HEADER IMAGE ON TOP */
 
 header{
     position:relative;
     z-index:3;
-    margin-top:30px;
+    margin-top:20px;
 }
 
 header img{
-    width:125%;
-    max-width:none;
-    margin-left:-12.5%;
+    width:100%;
+    max-width:1800px;
     height:auto;
     display:block;
+    margin:0 auto;
 }
 
-/* WELCOME BOX */
+/* WELCOME BOX ON TOP */
 
 .welcome{
     width:95%;
@@ -87,6 +100,8 @@ header img{
     gap:60px;
     flex-wrap:wrap;
     padding:20px;
+    position:relative;
+    z-index:3;
 }
 
 .book-buttons img{
@@ -109,6 +124,8 @@ footer{
     background:#ffccdd;
     color:#333;
     font-size:22px;
+    position:relative;
+    z-index:3;
 }
 
 /* MOBILE */
@@ -116,18 +133,13 @@ footer{
 @media(max-width:768px){
 
     nav{
-        padding:40px;
+        padding:25px;
     }
 
-    nav a{
-        display:block;
-        margin:20px 0;
-        font-size:40px;
-    }
-
-    header img{
-        width:130%;
-        margin-left:-15%;
+    .background-title{
+        top:180px;
+        letter-spacing:15px;
+        font-size:clamp(60px,14vw,120px);
     }
 
     .welcome{
@@ -146,6 +158,9 @@ footer{
     <a href="index.html">Homepage</a>
     <a href="contact.html">Contact</a>
 </nav>
+
+<!-- BACKGROUND TITLE -->
+<div class="background-title">WELCOME</div>
 
 <header>
     <img src="Penelope.jpg" alt="Penelope + Porky Logo">
