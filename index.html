@@ -16,21 +16,23 @@ body{
     overflow-x:hidden;
 }
 
-/* NAV */
+/* 🔥 BIG HEADER NAV BAR */
 
 nav{
     background:#ffccdd;
-    padding:40px;
-    position:relative;
-    z-index:5;
+    padding:70px;
 }
 
 nav a{
     text-decoration:none;
     color:#333;
     font-weight:bold;
-    margin:0 40px;
-    font-size:clamp(28px,3vw,45px);
+    margin:0 60px;
+    font-size:clamp(40px,5vw,70px);
+}
+
+nav a:hover{
+    color:#d1006c;
 }
 
 /* BACKGROUND TITLE */
@@ -48,7 +50,7 @@ nav a{
     pointer-events:none;
 }
 
-/* HEADER (BIGGER NOW) */
+/* HEADER IMAGE */
 
 header{
     position:relative;
@@ -100,8 +102,6 @@ header img{
     gap:60px;
     flex-wrap:wrap;
     padding:20px;
-    position:relative;
-    z-index:3;
 }
 
 .book-buttons img{
@@ -124,8 +124,6 @@ footer{
     background:#ffccdd;
     color:#333;
     font-size:22px;
-    position:relative;
-    z-index:3;
 }
 
 /* MOBILE */
@@ -133,7 +131,13 @@ footer{
 @media(max-width:768px){
 
     nav{
-        padding:25px;
+        padding:40px;
+    }
+
+    nav a{
+        display:block;
+        margin:20px 0;
+        font-size:40px;
     }
 
     .background-title{
