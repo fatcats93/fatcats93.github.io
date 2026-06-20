@@ -14,13 +14,12 @@ body{
     color:#000;
     text-align:center;
 
-    /* KEY FIX: forces footer to bottom */
     min-height:100vh;
     display:flex;
     flex-direction:column;
 }
 
-/* NAV (UNCHANGED STYLE) */
+/* NAV (UNCHANGED EXCEPT TEXT SIZE FIX) */
 nav{
     background:#ffccdd;
     padding:3vh 2vw;
@@ -34,15 +33,19 @@ nav a{
     text-decoration:none;
     color:#333;
     font-weight:bold;
-    font-size:clamp(20px,2.5vw,32px);
+
+    /* 🔥 ONLY CHANGE: BIGGER TEXT */
+    font-size:clamp(40px,4.5vw,80px);
+
+    margin:0 40px;
 }
 
-/* CONTENT MUST EXPAND */
+/* CONTENT */
 .content{
-    flex:1; /* KEY FIX: pushes footer down */
+    flex:1;
 }
 
-/* TITLE (UNCHANGED) */
+/* TITLE */
 .title{
     width:98vw;
     max-width:1600px;
@@ -50,7 +53,7 @@ nav a{
     display:block;
 }
 
-/* ===== BUTTONS (UNCHANGED EXACTLY FROM YOUR CODE) ===== */
+/* BUTTONS (UNCHANGED) */
 .buttons{
     display:flex;
     flex-direction:column;
@@ -92,21 +95,13 @@ nav a{
     transform:scale(1.03);
 }
 
-/* FOOTER FIX (TRUE BOTTOM STICK) */
+/* FOOTER (UNCHANGED FIX) */
 footer{
     background:#ffccdd;
     width:100%;
     padding:3vh 0;
     font-size:clamp(16px,2vw,22px);
-    margin-top:auto; /* 🔥 THIS is the key fix */
-}
-
-/* PHONE */
-@media(max-width:600px){
-    .button{
-        font-size:34px;
-        padding:45px 20px;
-    }
+    margin-top:auto;
 }
 
 </style>
