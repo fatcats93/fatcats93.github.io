@@ -13,122 +13,99 @@ body{
     background:#ff66b2;
     color:#000;
     text-align:center;
-    overflow-x:hidden;
 
-    /* FIX: makes footer stick to bottom */
+    /* KEY FIX: forces footer to bottom */
     min-height:100vh;
     display:flex;
     flex-direction:column;
 }
 
-/* NAV (MATCHED YOUR HOMEPAGE) */
+/* NAV (UNCHANGED STYLE) */
 nav{
     background:#ffccdd;
-    padding:40px;
-    position:relative;
-    z-index:5;
+    padding:3vh 2vw;
+    display:flex;
+    justify-content:center;
+    gap:6vw;
+    flex-wrap:wrap;
 }
 
 nav a{
     text-decoration:none;
     color:#333;
     font-weight:bold;
-    margin:0 40px;
-    font-size:clamp(28px,3vw,45px);
+    font-size:clamp(20px,2.5vw,32px);
 }
 
-/* HEADER IMAGE (UNCHANGED STYLE) */
-header{
-    position:relative;
-    z-index:3;
-    margin-top:20px;
-}
-
-header img{
-    width:100%;
-    max-width:1800px;
-    height:auto;
-    display:block;
-    margin:0 auto;
-}
-
-/* CONTENT WRAPPER (PUSHES FOOTER DOWN) */
+/* CONTENT MUST EXPAND */
 .content{
-    flex:1;
+    flex:1; /* KEY FIX: pushes footer down */
 }
 
-/* KEEP YOUR BUTTON LAYOUT (UNCHANGED STRUCTURE) */
+/* TITLE (UNCHANGED) */
+.title{
+    width:98vw;
+    max-width:1600px;
+    margin:3vh auto 0 auto;
+    display:block;
+}
+
+/* ===== BUTTONS (UNCHANGED EXACTLY FROM YOUR CODE) ===== */
 .buttons{
     display:flex;
-    justify-content:center;
+    flex-direction:column;
     align-items:center;
-    gap:60px;
-    flex-wrap:wrap;
-    padding:40px 20px;
-    position:relative;
-    z-index:3;
+    gap:5vh;
+    margin-top:-4vh;
+    padding-bottom:6vh;
 }
 
-/* BIG BUTTONS (same idea you had, just scaled clean) */
 .button{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    width:100%;
-    max-width:500px;
-
-    background:white;
+    background-color:white;
     color:#ff0066;
-
     font-weight:bold;
-    font-size:clamp(32px,4vw,60px);
 
-    padding:60px 20px;
+    font-size:clamp(28px,5vw,80px);
+    line-height:1;
 
-    border:5px solid #000;
-    border-radius:25px;
+    padding:clamp(40px,8vh,90px) clamp(30px,10vw,160px);
+
+    border:6px solid #000;
+    border-radius:999px;
 
     text-decoration:none;
-    transition:0.3s;
+    transition:transform 0.2s ease, background-color 0.2s ease;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:92vw;
+    max-width:1100px;
+
+    letter-spacing:1px;
 }
 
 .button:hover{
-    transform:scale(1.08);
-    background:#ff0066;
+    background-color:#ff0066;
     color:white;
+    transform:scale(1.03);
 }
 
-/* FOOTER FIXED TO BOTTOM OF PAGE */
+/* FOOTER FIX (TRUE BOTTOM STICK) */
 footer{
     background:#ffccdd;
-    color:#333;
-    font-size:22px;
-
-    padding:30px;
     width:100%;
+    padding:3vh 0;
+    font-size:clamp(16px,2vw,22px);
+    margin-top:auto; /* 🔥 THIS is the key fix */
 }
 
-/* MOBILE */
-@media(max-width:768px){
-
-    nav{
-        padding:25px;
-    }
-
-    nav a{
-        margin:0 20px;
-        font-size:clamp(22px,4vw,34px);
-    }
-
-    .buttons{
-        gap:30px;
-    }
-
+/* PHONE */
+@media(max-width:600px){
     .button{
-        width:90%;
-        font-size:40px;
-        padding:50px 20px;
+        font-size:34px;
+        padding:45px 20px;
     }
 }
 
@@ -142,15 +119,14 @@ footer{
     <a href="contact.html">Contact</a>
 </nav>
 
-<header>
-    <img src="contact.png" alt="Contact Header">
-</header>
-
-<!-- CONTENT (THIS IS WHAT FIXES FOOTER POSITION) -->
 <div class="content">
 
+    <img src="contact.png" class="title" alt="Contact Title">
+
     <div class="buttons">
-        <a href="mailto:veronicafridman63@gmail.com" class="button">Email Me</a>
+        <a href="mailto:veronicafridman63@gmail.com" class="button">
+            Email Me
+        </a>
 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-ssSQKNLgYSm_mh1GhcekQbIgi-QZhsIto6U8qIlTZzZzwQ/viewform?usp=header"
            class="button" target="_blank">
