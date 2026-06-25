@@ -13,13 +13,13 @@ body{
     background:#ff66b2;
     color:#000;
     text-align:center;
-
     min-height:100vh;
     display:flex;
     flex-direction:column;
 }
 
 /* NAV */
+
 nav{
     background:#ffccdd;
     padding:3vh 2vw;
@@ -38,61 +38,102 @@ nav a{
 }
 
 /* CONTENT */
+
 .content{
     flex:1;
 }
 
-/* 🔥 TITLE ONLY CHANGE (MADE BIGGER) */
+/* TITLE */
+
 .title{
-    width:100vw;              /* was smaller before */
-    max-width:1900px;        /* increased from 1600 */
+    width:100vw;
+    max-width:1900px;
     margin:4vh auto 0 auto;
     display:block;
 }
 
-/* BUTTONS (UNCHANGED) */
+/* BUTTONS */
+
 .buttons{
     display:flex;
     flex-direction:column;
     align-items:center;
     gap:5vh;
     margin-top:-4vh;
-    padding-bottom:6vh;
+    padding-bottom:4vh;
 }
 
 .button{
-    background-color:white;
+    background:white;
     color:#ff0066;
     font-weight:bold;
-
     font-size:clamp(28px,5vw,80px);
     line-height:1;
-
     padding:clamp(40px,8vh,90px) clamp(30px,10vw,160px);
-
     border:6px solid #000;
     border-radius:999px;
-
     text-decoration:none;
-    transition:transform 0.2s ease, background-color 0.2s ease;
-
+    transition:.2s;
     display:flex;
     align-items:center;
     justify-content:center;
-
     width:92vw;
     max-width:1100px;
-
     letter-spacing:1px;
 }
 
 .button:hover{
-    background-color:#ff0066;
+    background:#ff0066;
     color:white;
     transform:scale(1.03);
 }
 
+/* DONATION BOX */
+
+.donation-box{
+    width:90%;
+    max-width:1100px;
+    margin:20px auto 70px auto;
+    background:#ffccdd;
+    border-radius:30px;
+    padding:50px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.donation-box h2{
+    font-family:'Brush Script MT',cursive;
+    color:#ff0066;
+    font-size:clamp(48px,5vw,75px);
+    margin-top:0;
+    margin-bottom:20px;
+}
+
+.donation-box p{
+    font-size:clamp(22px,2.5vw,32px);
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.donate-button{
+    display:inline-block;
+    background:#ff66b2;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:clamp(28px,4vw,50px);
+    padding:22px 65px;
+    border-radius:999px;
+    border:5px solid black;
+    transition:.2s;
+}
+
+.donate-button:hover{
+    background:#ff0066;
+    transform:scale(1.05);
+}
+
 /* FOOTER */
+
 footer{
     background:#ffccdd;
     width:100%;
@@ -116,14 +157,36 @@ footer{
     <img src="contact.png" class="title" alt="Contact Title">
 
     <div class="buttons">
+
         <a href="mailto:veronicafridman63@gmail.com" class="button">
             Email Me
         </a>
 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-ssSQKNLgYSm_mh1GhcekQbIgi-QZhsIto6U8qIlTZzZzwQ/viewform?usp=header"
-           class="button" target="_blank">
+        class="button" target="_blank">
             Leave Feedback
         </a>
+
+    </div>
+
+    <div class="donation-box">
+
+        <h2>Support Penelope + Porky 💖</h2>
+
+        <p>
+            Hi! I'm Veronica, a high school student who created
+            <b>Penelope + Porky</b>. Every comic is written and illustrated by me,
+            and I work on it in my free time between school and other activities.
+            If you've enjoyed reading the comics, donations help cover printing,
+            art supplies, website costs, and future books. Every contribution,
+            no matter the size, helps me continue creating new adventures.
+            Thank you so much for your support! ❤️
+        </p>
+
+        <a href="YOUR-LINK-HERE" target="_blank" class="donate-button">
+            Donate ❤️
+        </a>
+
     </div>
 
 </div>
