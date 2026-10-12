@@ -1,13 +1,13 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Penelope + Porky</title>
 
 <style>
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -17,8 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVIGATION */
-
+/* Navigation bar */
 nav {
     background: #ffccdd;
     padding: 40px;
@@ -34,8 +33,7 @@ nav a {
     font-size: clamp(28px, 3vw, 45px);
 }
 
-/* BACKGROUND WELCOME TITLE */
-
+/* Background title */
 .background-title {
     position: absolute;
     top: 220px;
@@ -49,8 +47,7 @@ nav a {
     pointer-events: none;
 }
 
-/* HEADER IMAGE */
-
+/* Logo */
 header {
     position: relative;
     z-index: 3;
@@ -65,14 +62,13 @@ header img {
     margin: 0 auto;
 }
 
-/* WELCOME BOX */
-
+/* White welcome box */
 .welcome {
     width: 90%;
     max-width: 1400px;
     margin: -120px auto 50px auto;
     padding: 50px;
-    background: #ffffff;
+    background: #fff;
     border-radius: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     position: relative;
@@ -93,30 +89,42 @@ header img {
     margin: 0 auto;
 }
 
-/* BOOK IMAGE THAT LINKS TO AMAZON */
-
-.amazon-book {
-    display: inline-block;
-    margin-top: 35px;
+/* Amazon purchase section OUTSIDE the white box */
+.purchase-section {
     position: relative;
     z-index: 5;
+    margin: 40px auto 60px auto;
+    padding: 20px;
+    text-align: center;
 }
 
-.amazon-book img {
+.purchase-section h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: clamp(35px, 5vw, 65px);
+    color: white;
+    text-shadow: 2px 2px 4px #cc3385;
+    margin: 0 0 25px 0;
+}
+
+.purchase-section a {
+    display: inline-block;
+}
+
+.purchase-section img {
     display: block;
     width: 100%;
     max-width: 350px;
     height: auto;
+    margin: 0 auto;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.amazon-book img:hover {
+.purchase-section img:hover {
     transform: scale(1.05);
 }
 
-/* FOOTER */
-
+/* Footer */
 footer {
     margin-top: 50px;
     padding: 30px;
@@ -127,10 +135,8 @@ footer {
     z-index: 3;
 }
 
-/* MOBILE RESPONSIVENESS */
-
+/* Mobile layout */
 @media (max-width: 768px) {
-
     nav {
         padding: 25px 10px;
     }
@@ -156,74 +162,72 @@ footer {
         font-size: 22px;
     }
 
-    .amazon-book img {
+    .purchase-section {
+        margin: 30px auto 45px auto;
+    }
+
+    .purchase-section h2 {
+        font-size: 38px;
+    }
+
+    .purchase-section img {
         max-width: 260px;
     }
 
     footer {
         font-size: 18px;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
+<!-- Navigation -->
 <nav>
     <a href="index.html">Homepage</a>
     <a href="contact.html">Contact</a>
 </nav>
 
-<!-- BACKGROUND TITLE -->
-
+<!-- Decorative background text -->
 <div class="background-title">WELCOME</div>
 
-<!-- HEADER LOGO -->
-
+<!-- Website logo -->
 <header>
     <img src="Penelope.jpg" alt="Penelope + Porky Logo">
 </header>
 
-<!-- WELCOME SECTION -->
-
+<!-- Welcome box -->
 <section class="welcome">
-
     <h2>Welcome</h2>
 
     <p>
         ...to the official Penelope and Porky website! I created this comic
         during my freshman year of high school and decided to share it with
-        the world! Follow the adventures of Penelope and her unicorn Porky, 
-        and contact me with questions, comments, or feedback. Have fun!
+        the world. Follow the adventures of Penelope and her unicorn friend
+        Porky, and contact me with questions, comments, or feedback. Have fun!
     </p>
-
-    <!-- CLICK THE BOOK IMAGE TO PURCHASE ON AMAZON -->
-
-    <a
-        class="amazon-book"
-        href="https://a.co/d/0et2cUwm"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Purchase Penelope and Porky on Amazon"
-    >
-        <img
-            src="BOOKONE.jpg"
-            alt="Purchase Penelope and Porky on Amazon"
-        >
-    </a>
-
 </section>
 
-<!-- FOOTER -->
+<!-- Amazon purchase section OUTSIDE the white welcome box -->
+<div class="purchase-section">
+    <h2>Click here to purchase on Amazon!</h2>
 
+    <a href="https://a.co/d/0et2cUwm"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Purchase Penelope and Porky on Amazon">
+
+        <img src="BOOK ONE.jpg"
+             alt="Purchase Penelope and Porky on Amazon">
+
+    </a>
+</div>
+
+<!-- Footer -->
 <footer>
     © 2025 Penelope + Porky. All Rights Reserved.
 </footer>
 
 </body>
 </html>
-```
