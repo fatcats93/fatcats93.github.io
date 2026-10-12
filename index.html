@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,144 +8,160 @@
 
 <style>
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#ff66b2;
-    color:#000;
-    text-align:center;
-    overflow-x:hidden;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ff66b2;
+    color: #000;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* NAV */
+/* NAVIGATION */
 
-nav{
-    background:#ffccdd;
-    padding:40px;
-    position:relative;
-    z-index:5;
+nav {
+    background: #ffccdd;
+    padding: 40px;
+    position: relative;
+    z-index: 5;
 }
 
-nav a{
-    text-decoration:none;
-    color:#333;
-    font-weight:bold;
-    margin:0 40px;
-    font-size:clamp(28px,3vw,45px);
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 40px;
+    font-size: clamp(28px, 3vw, 45px);
 }
 
-/* BACKGROUND WELCOME TITLE (BEHIND EVERYTHING) */
+/* BACKGROUND WELCOME TITLE */
 
-.background-title{
-    position:absolute;
-    top:220px;
-    left:0;
-    width:100%;
-    font-size:clamp(80px,12vw,180px);
-    letter-spacing:25px;
-    font-family:'Brush Script MT',cursive;
-    color:rgba(255,255,255,0.35);
-    z-index:0;
-    pointer-events:none;
+.background-title {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 100%;
+    font-size: clamp(80px, 12vw, 180px);
+    letter-spacing: 25px;
+    font-family: 'Brush Script MT', cursive;
+    color: rgba(255, 255, 255, 0.35);
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* HEADER IMAGE ON TOP */
+/* HEADER IMAGE */
 
-header{
-    position:relative;
-    z-index:3;
-    margin-top:20px;
+header {
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
 }
 
-header img{
-    width:100%;
-    max-width:1800px;
-    height:auto;
-    display:block;
-    margin:0 auto;
+header img {
+    width: 100%;
+    max-width: 1800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-/* WELCOME BOX ON TOP */
+/* WELCOME BOX */
 
-.welcome{
-    width:95%;
-    max-width:1400px;
-    margin:-120px auto 50px auto;
-    padding:50px;
-    background:white;
-    border-radius:25px;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-    position:relative;
-    z-index:4;
+.welcome {
+    width: 90%;
+    max-width: 1400px;
+    margin: -120px auto 50px auto;
+    padding: 50px;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 4;
+    box-sizing: border-box;
 }
 
-.welcome h2{
-    font-size:clamp(50px,6vw,90px);
-    font-family:'Brush Script MT',cursive;
-    margin:0 0 20px 0;
+.welcome h2 {
+    font-size: clamp(50px, 6vw, 90px);
+    font-family: 'Brush Script MT', cursive;
+    margin: 0 0 20px 0;
 }
 
-.welcome p{
-    font-size:clamp(28px,3.5vw,44px);
-    line-height:1.8;
-    max-width:1200px;
-    margin:0 auto;
+.welcome p {
+    font-size: clamp(22px, 3vw, 38px);
+    line-height: 1.8;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* BOOKS */
+/* BOOK IMAGE THAT LINKS TO AMAZON */
 
-.book-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:60px;
-    flex-wrap:wrap;
-    padding:20px;
-    position:relative;
-    z-index:3;
+.amazon-book {
+    display: inline-block;
+    margin-top: 35px;
+    position: relative;
+    z-index: 5;
 }
 
-.book-buttons img{
-    width:100%;
-    max-width:500px;
-    height:auto;
-    cursor:pointer;
-    transition:.3s;
+.amazon-book img {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.book-buttons img:hover{
-    transform:scale(1.08);
+.amazon-book img:hover {
+    transform: scale(1.05);
 }
 
 /* FOOTER */
 
-footer{
-    margin-top:50px;
-    padding:30px;
-    background:#ffccdd;
-    color:#333;
-    font-size:22px;
-    position:relative;
-    z-index:3;
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    background: #ffccdd;
+    color: #333;
+    font-size: 22px;
+    position: relative;
+    z-index: 3;
 }
 
-/* MOBILE */
+/* MOBILE RESPONSIVENESS */
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-    nav{
-        padding:25px;
+    nav {
+        padding: 25px 10px;
     }
 
-    .background-title{
-        top:180px;
-        letter-spacing:15px;
-        font-size:clamp(60px,14vw,120px);
+    nav a {
+        margin: 0 12px;
+        font-size: clamp(20px, 4vw, 28px);
     }
 
-    .welcome{
-        padding:30px;
-        margin:-80px auto 40px auto;
+    .background-title {
+        top: 180px;
+        letter-spacing: 15px;
+        font-size: clamp(60px, 14vw, 120px);
+    }
+
+    .welcome {
+        width: 92%;
+        padding: 30px 20px;
+        margin: -80px auto 40px auto;
+    }
+
+    .welcome p {
+        font-size: 22px;
+    }
+
+    .amazon-book img {
+        max-width: 260px;
+    }
+
+    footer {
+        font-size: 18px;
     }
 
 }
@@ -154,17 +171,24 @@ footer{
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
     <a href="index.html">Homepage</a>
     <a href="contact.html">Contact</a>
 </nav>
 
 <!-- BACKGROUND TITLE -->
+
 <div class="background-title">WELCOME</div>
+
+<!-- HEADER LOGO -->
 
 <header>
     <img src="Penelope.jpg" alt="Penelope + Porky Logo">
 </header>
+
+<!-- WELCOME SECTION -->
 
 <section class="welcome">
 
@@ -173,24 +197,28 @@ footer{
     <p>
         ...to the official Penelope and Porky website! I created this comic
         during my freshman year of high school and decided to share it with
-        the world. Click on a book below to read the comics and follow the
-        adventures of Penelope and her unicorn friend Porky. You can also
-        contact me with questions, comments, or feedback. Have fun!
+        the world! Follow the adventures of Penelope and her unicorn Porky, 
+        and contact me with questions, comments, or feedback. Have fun!
     </p>
+
+    <!-- CLICK THE BOOK IMAGE TO PURCHASE ON AMAZON -->
+
+    <a
+        class="amazon-book"
+        href="https://a.co/d/0et2cUwm"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Purchase Penelope and Porky on Amazon"
+    >
+        <img
+            src="BOOKONE.jpg"
+            alt="Purchase Penelope and Porky on Amazon"
+        >
+    </a>
 
 </section>
 
-<div class="book-buttons">
-
-    <a href="https://fatcats93.github.io/origin.html" target="_blank">
-        <img src="Book1.png" alt="Book 1">
-    </a>
-
-    <a href="https://fatcats93.github.io/book2.html" target="_blank">
-        <img src="book2.png" alt="Book 2">
-    </a>
-
-</div>
+<!-- FOOTER -->
 
 <footer>
     © 2025 Penelope + Porky. All Rights Reserved.
@@ -198,3 +226,4 @@ footer{
 
 </body>
 </html>
+```
